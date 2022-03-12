@@ -25,7 +25,7 @@ social:
     link: https://www.linkedin.com/
 organizations:
   - name: PKU | SYSU | TUM
-    url: https://www.pku.edu.cn/
+    url: https://english.pku.edu.cn/
 education:
   courses:
     - course: PhD in Artificial Intelligence
