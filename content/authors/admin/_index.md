@@ -1,5 +1,5 @@
 ---
-role: Professor of Artificial Intelligence
+role: "Complexity | Computational Social | Urban Computing | Complex Network "
 avatar_filename: avatar.png
 bio: My research interests include distributed robotics, mobile computing and
   programmable matter.
