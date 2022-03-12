@@ -21,7 +21,7 @@ social:
     icon_pack: fab
     link: https://www.linkedin.com/
 organizations:
-  - name: PKU | SYSU | TUM
+  - name: PKU | TUM | SYSU
     url: https://english.pku.edu.cn/
 education:
   courses:
