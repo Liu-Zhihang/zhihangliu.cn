@@ -10,7 +10,7 @@ weight: 130
 
 title: Contact
 
-
+form:
 
   # Contact details (edit or remove options as required)
   email: liuzhihang@stu.pku.edu.cn
