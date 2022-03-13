@@ -10,7 +10,7 @@ interests:
 social:
   - icon: envelope
     icon_pack: fas
-    link: /#contact
+    link: liuzhihang@stu.pku.edu.cn
   - icon: github
     icon_pack: fab
     link: https://github.com/Liu-Zhihang
