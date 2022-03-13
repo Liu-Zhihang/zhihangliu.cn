@@ -30,6 +30,6 @@ highlight_name: true
 title: Zhihang Liu
 email: ""
 ---
-I get
+I get my
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
