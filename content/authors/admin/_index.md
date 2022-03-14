@@ -18,10 +18,10 @@ education:
   courses:
     - course: MSc in Urban Computing
       institution: Peking University
-      year: ""
+      year: 2023
     - course: BA in Public Administration
       institution: Sun Yat-Sen University
-      year: ""
+      year: 2021
 superuser: true
 highlight_name: true
 title: Zhihang Liu
