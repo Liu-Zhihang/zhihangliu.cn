@@ -1,8 +1,8 @@
 ---
 role: "Complexity | Computational Social | Urban Computing | Complex Network "
 avatar_filename: avatar.png
-bio: My research interests include Complexity, Computational Social, Urban
-  Computing and Complex Network .
+bio: My research interests include Complexity, Computational Social Science,
+  Urban Computing and Complex Network .
 interests:
   - Artificial Intelligence
   - Computational Linguistics
@@ -16,12 +16,12 @@ organizations:
     url: https://english.pku.edu.cn/
 education:
   courses:
-    - course: MEng in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2009
-    - course: BSc in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2008
+    - course: MSc in Urban Computing
+      institution: Peking University
+      year: ""
+    - course: BA in Public Administration
+      institution: Sun Yat-Sen University
+      year: ""
 superuser: true
 highlight_name: true
 title: Zhihang Liu
