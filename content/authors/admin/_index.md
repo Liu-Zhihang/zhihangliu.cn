@@ -1,12 +1,12 @@
 ---
-role: Complexity | Complex Network | Computational Social Science  | Urban
+role: Complexity | Complex Networks | Computational Social Science  | Urban
   Computing Science
 avatar_filename: avatar.png
 bio: My research interests include Complexity, Computational Social Science,
   Urban Computing and Complex Network.
 interests:
   - Complexity
-  - Complex Network
+  - Complex Networks
   - Computational Social Science
   - Urban Computing
 social:
@@ -29,6 +29,6 @@ highlight_name: true
 title: Zhihang Liu
 email: ""
 ---
-I get my
+I am a master's student at Peking University. My research interests include Urban Computing, Computational Social Science and Complexity, Complex Networks.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
