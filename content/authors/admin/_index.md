@@ -16,10 +16,10 @@ organizations:
     url: https://english.pku.edu.cn/
 education:
   courses:
-    - course: MSc in Urban Computing
+    - course: MSc in Urban Planning (Research in Urban Computing)
       institution: Peking University
-      year: 2023
-    - course: BA in Public Administration
+      year: 2024
+    - course: BA in Public Administration (Research in Computational Social Science)
       institution: Sun Yat-Sen University
       year: 2021
 superuser: true
