@@ -31,4 +31,12 @@ email: ""
 ---
 I am a master's student at Peking University. My research interests include Urban Computing, Computational Social Science and Complexity, Complex Networks.
 
+
+
+<!--StartFragment-->
+
+You can reach me via email: liuzhihang@stu.pku.edu.cn
+
+<!--EndFragment-->
+
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
