@@ -1,0 +1,19 @@
+  main:
+  - name: 首页
+    url: '#about'
+    weight: 10
+  - name: 文章
+    url: '#posts'
+    weight: 20
+  - name: 项目
+    url: '#projects'
+    weight: 30
+  - name: 演讲
+    url: '#talks'
+    weight: 40
+  - name: 出版物
+    url: '#featured'
+    weight: 50
+  - name: 联系我
+    url: '#contact'
+    weight: 60
