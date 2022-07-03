@@ -1,6 +1,5 @@
 ---
-role: Complexity | Complex Networks | Computational Social Science  | Urban
-  Computing Science
+role: Complexity | Complex Networks | Computational Social Science  | Urban Computing
 avatar_filename: avatar.png
 bio: My research interests include Complexity, Computational Social Science,
   Urban Computing and Complex Network.
