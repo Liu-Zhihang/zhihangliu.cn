@@ -28,9 +28,7 @@ highlight_name: true
 title: Zhihang Liu
 email: ""
 ---
-I am a master's student at Peking University. My research interests include Urban Computing, Computational Social Science and Complexity, Complex Networks.
-
-
+I am a master's student at Peking University. My research interests include Urban Computing, Computational Social Science and Complexity, Complex Networks. I going to be a visiting student at the Technical University of Munich, German.
 
 <!--StartFragment-->
 
