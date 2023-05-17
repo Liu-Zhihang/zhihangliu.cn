@@ -28,7 +28,7 @@ highlight_name: true
 title: Zhihang Liu
 email: ""
 ---
-I am a master's student at Peking University. My research interests include Urban Computing, Computational Social Science and Complexity, Complex Networks. I going to be a visiting student at the Technical University of Munich, German.
+I am a master's student at Peking University. My research interests include Urban Computing, Computational Social Science and Complexity, Complex Networks. I am currently a research assistant at the Department of Aerospace and Geodesy, [Professor of Geospatial Big Data Management](https://www.bgd.ed.tum.de/en/team.html) in the Technical University of Munich, Germany.
 
 <!--StartFragment-->
 
