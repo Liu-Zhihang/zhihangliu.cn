@@ -98,6 +98,98 @@
             color: #007bff;
             /* 或您选择的任何颜色 */
         }
+
+        /* 左侧边栏样式 - 仿 Yu Qing 风格 */
+        .sidebar-profile {
+            text-align: left;
+            position: sticky;
+            top: 80px;
+        }
+
+        .sidebar-profile .avatar {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 15px;
+        }
+
+        .sidebar-profile .portrait-title {
+            text-align: left;
+        }
+
+        .sidebar-name {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .sidebar-position {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 3px;
+            font-weight: 500;
+        }
+
+        .sidebar-affiliation a,
+        .sidebar-department a {
+            color: #1565c0;
+            font-size: 0.9rem;
+        }
+
+        .sidebar-location {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .sidebar-affiliation,
+        .sidebar-department {
+            margin-bottom: 3px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .sidebar-icons {
+            justify-content: flex-start;
+            margin-top: 15px;
+        }
+
+        .sidebar-icons li {
+            margin-right: 10px;
+        }
+
+        .sidebar-icons i {
+            font-size: 1.2rem;
+            color: #1565c0;
+        }
+
+        .sidebar-icons i:hover {
+            color: #0d47a1;
+        }
+
+        /* 调整右侧内容区 */
+        #about .col-lg-9 h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        #about .article-style p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 991px) {
+            .sidebar-profile {
+                text-align: center;
+                position: relative;
+                top: 0;
+            }
+            .sidebar-profile .portrait-title {
+                text-align: center;
+            }
+            .sidebar-icons {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
@@ -216,41 +308,49 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-lg-4">
-                        <div id="profile">
-                            <img class="avatar avatar-circle" width="270" height="270"
+                    <!-- 左侧边栏：头像和基本信息 -->
+                    <div class="col-12 col-lg-3">
+                        <div id="profile" class="sidebar-profile">
+                            <img class="avatar avatar-circle" width="120" height="120"
                                 src="./assets/images/avatar_hu52b4c1557bcb3599cc5c64f2ce5143cc_173763_270x270_fill_lanczos_center_3.png"
                                 alt="Zhihang Liu">
                             <div class="portrait-title">
-                                <h2>Zhihang Liu</h2>
-                                <h3>Complexity | Complex Networks | Computational Social Science | Urban Computing</h3>
-                                <h3>
-                                    <a href="https://english.pku.edu.cn/" target="_blank" rel="noopener">
-                                        <span>
-                                            <a href="https://www.sysu.edu.cn/sysuen/">SYSU</a>
-                                            | <a href="https://english.pku.edu.cn/">PKU</a> |
-                                            <a href="http://english.igsnrr.cas.cn/">CAS</a> |
-                                            <a href='https://www.tum.de/'>TUM</a> |
-                                            <a href='https://www.cuhk.edu.hk/english/index.html'>CUHK</a> </span>
-                                    </a>
-                                </h3>
+                                <h2 class="sidebar-name">Zhihang Liu</h2>
+                                <p class="sidebar-position">Master's Student</p>
+                                <p class="sidebar-affiliation">
+                                    <a href="https://english.pku.edu.cn/" target="_blank" rel="noopener">Peking University</a>
+                                </p>
+                                <p class="sidebar-location">Shenzhen</p>
+                                <p class="sidebar-department">
+                                    <a href="https://www.pkusz.edu.cn/" target="_blank" rel="noopener">School of Urban Planning and Design</a>
+                                </p>
                             </div>
-                            <ul class="network-icon" aria-hidden="true">
+                            <ul class="network-icon sidebar-icons" aria-hidden="true">
                                 <li>
-                                    <a href="https://github.com/Liu-Zhihang" target="_blank" rel="noopener"
-                                        aria-label="github">
-                                        <i class="fab fa-github big-icon"></i>
+                                    <a href="mailto:liuzhihang@stu.pku.edu.cn" aria-label="email">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/Liu-Zhihang" target="_blank" rel="noopener" aria-label="github">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://scholar.google.com/" target="_blank" rel="noopener" aria-label="google-scholar">
+                                        <i class="ai ai-google-scholar"></i>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="./assets/resume/CV_lzh.pdf" target="_blank" rel="noopener" aria-label="cv">
-                                        <i class="ai ai-cv big-icon"></i>
+                                        <i class="ai ai-cv"></i>
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-8">
+                    <!-- 右侧主内容区 -->
+                    <div class="col-12 col-lg-9">
                         <h1>Biography</h1>
                         <div class="article-style">
                             <p>I am currently a master's student at Peking University with a keen focus on Urban
