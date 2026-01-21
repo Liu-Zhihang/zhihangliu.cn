@@ -48,14 +48,14 @@
   var coreLeftShiftX = 40;
   var coreLeftShiftY = 60;
   var coreRightShiftX = -120;
-  var coreGlobalShiftX = -55;
+  var coreGlobalShiftX = -70;
   var coreGlobalShiftY = 95;
   var coreMidExtraUp = 28;
   var coreGsiDown = -18;
   var coreTargetPos = {
     "Non-equilibrium Physics": { x: coreColumnLeft + coreLeftShiftX - 30 + coreGlobalShiftX, y: coreSpacing * 2.1 * coreYSign + coreLeftShiftY + coreGlobalShiftY },
     "Self-organization & Pattern Formation": { x: coreColumnLeft + coreLeftShiftX - 30 + coreGlobalShiftX, y: coreSpacing * 1.2 * coreYSign + coreLeftShiftY + coreGlobalShiftY + coreMidExtraUp },
-    "Modern Dynamics": { x: coreColumnLeft + coreLeftShiftX + coreGlobalShiftX - 30, y: coreSpacing * 0.3 * coreYSign + coreLeftShiftY + 25 + coreGlobalShiftY + coreMidExtraUp },
+    "Modern Dynamics": { x: coreColumnLeft + coreLeftShiftX + coreGlobalShiftX - 30, y: coreSpacing * 0.3 * coreYSign + coreLeftShiftY + 15 + coreGlobalShiftY + coreMidExtraUp },
     "Swarm Robotics": { x: coreColumnRight + coreRightShiftX - 30 + coreGlobalShiftX, y: coreSpacing * 1.6 * coreYSign + coreGlobalShiftY },
     "General Swarm Intelligence": { x: coreColumnRight + coreRightShiftX - 30 + coreGlobalShiftX, y: coreSpacing * 2.6 * coreYSign + coreGlobalShiftY + coreGsiDown }
   };
