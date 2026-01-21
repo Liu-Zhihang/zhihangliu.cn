@@ -39,18 +39,32 @@
     robotics: "Swarm Robotics",
     methods: "Modern Dynamics"
   };
-  var coreX = 520;
+  var coreX = 640;
   var coreSpacing = 90;
   var coreYSign = 1;
-  var coreTargetY = {
-    "Non-equilibrium Physics": coreSpacing * 2.1 * coreYSign,
-    "Self-organization & Pattern Formation": coreSpacing * 1.2 * coreYSign,
-    "Modern Dynamics": coreSpacing * 0.3 * coreYSign,
-    "Swarm Robotics": -coreSpacing * 0.7 * coreYSign,
-    "General Swarm Intelligence": -coreSpacing * 1.5 * coreYSign
+  var coreColumnGap = 140;
+  var coreColumnLeft = coreX - coreColumnGap + 80;
+  var coreColumnRight = coreX + coreColumnGap;
+  var coreLeftShiftX = 40;
+  var coreLeftShiftY = 60;
+  var coreRightShiftX = -120;
+  var coreGlobalShiftX = -55;
+  var coreGlobalShiftY = 95;
+  var coreMidExtraUp = 28;
+  var coreGsiDown = -18;
+  var coreTargetPos = {
+    "Non-equilibrium Physics": { x: coreColumnLeft + coreLeftShiftX - 30 + coreGlobalShiftX, y: coreSpacing * 2.1 * coreYSign + coreLeftShiftY + coreGlobalShiftY },
+    "Self-organization & Pattern Formation": { x: coreColumnLeft + coreLeftShiftX - 30 + coreGlobalShiftX, y: coreSpacing * 1.2 * coreYSign + coreLeftShiftY + coreGlobalShiftY + coreMidExtraUp },
+    "Modern Dynamics": { x: coreColumnLeft + coreLeftShiftX + coreGlobalShiftX - 30, y: coreSpacing * 0.3 * coreYSign + coreLeftShiftY + 25 + coreGlobalShiftY + coreMidExtraUp },
+    "Swarm Robotics": { x: coreColumnRight + coreRightShiftX - 30 + coreGlobalShiftX, y: coreSpacing * 1.6 * coreYSign + coreGlobalShiftY },
+    "General Swarm Intelligence": { x: coreColumnRight + coreRightShiftX - 30 + coreGlobalShiftX, y: coreSpacing * 2.6 * coreYSign + coreGlobalShiftY + coreGsiDown }
   };
-  var coreYValues = coreIds.map(function (id) { return coreTargetY[id] || 0; });
+  var coreTargets = coreIds.map(function (id) { return coreTargetPos[id] || { x: coreX, y: 0 }; });
+  var coreXValues = coreTargets.map(function (pos) { return pos.x; });
+  var coreYValues = coreTargets.map(function (pos) { return pos.y; });
+  var coreXCenter = (Math.min.apply(Math, coreXValues) + Math.max.apply(Math, coreXValues)) / 2;
   var coreYCenter = (Math.min.apply(Math, coreYValues) + Math.max.apply(Math, coreYValues)) / 2;
+  var coreViewOffsetY = -70;
 
   var showError = function (message) {
     if (!errorBox) {
@@ -79,14 +93,14 @@
       if (!node) {
         return;
       }
-      var baseY = coreTargetY[id] || 0;
-      node.x = coreX;
-      node.y = baseY;
+      var target = coreTargetPos[id] || { x: coreX, y: 0 };
+      node.x = target.x;
+      node.y = target.y;
       node.z = 0;
-      node.fx = coreX;
-      node.fy = baseY;
+      node.fx = target.x;
+      node.fy = target.y;
       node.fz = 0;
-      corePositions[id] = { x: coreX, y: baseY, z: 0 };
+      corePositions[id] = { x: node.x, y: node.y, z: 0 };
     });
 
     var anchors = [];
@@ -313,21 +327,21 @@
       if (data && Array.isArray(data.nodes)) {
         var coreNodes = data.nodes.filter(function (node) { return node.group === "core"; });
         coreNodes.forEach(function (node) {
-          var targetY = coreTargetY[node.id] || 0;
-          node.fx = coreX;
-          node.fy = targetY;
+          var target = coreTargetPos[node.id] || { x: coreX, y: 0 };
+          node.fx = target.x;
+          node.fy = target.y;
           var idx = coreIds.indexOf(node.id);
           node.fz = (idx % 2 === 0 ? 1 : -1) * 28;
         });
       }
       var centerForce = graph.d3Force("center");
       if (centerForce && typeof centerForce.x === "function") {
-        centerForce.x(coreX).y(coreYCenter).z(0);
+        centerForce.x(coreXCenter).y(coreYCenter).z(0);
       }
       if (typeof graph.centerAt === "function") {
-        graph.centerAt(coreX, coreYCenter, 0);
+        graph.centerAt(coreXCenter, coreYCenter + coreViewOffsetY, 0);
       }
-      graph.cameraPosition({ x: 680, y: 170, z: 380 }, { x: coreX - 180, y: coreYCenter, z: 0 }, 1500);
+      graph.cameraPosition({ x: 680, y: 170, z: 380 }, { x: coreXCenter - 180, y: coreYCenter + coreViewOffsetY, z: 0 }, 1500);
       if (typeof graph.d3ReheatSimulation === "function") {
         graph.d3ReheatSimulation();
       }
