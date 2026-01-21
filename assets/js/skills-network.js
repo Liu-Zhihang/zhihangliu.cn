@@ -48,7 +48,7 @@
   var coreLeftShiftX = 40;
   var coreLeftShiftY = 60;
   var coreRightShiftX = -120;
-  var coreGlobalShiftX = -70;
+  var coreGlobalShiftX = -80;
   var coreGlobalShiftY = 95;
   var coreMidExtraUp = 28;
   var coreGsiDown = -18;
