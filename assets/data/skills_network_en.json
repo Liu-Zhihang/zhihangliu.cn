@@ -1,0 +1,631 @@
+{
+  "nodes": [
+    {
+      "id": "Non-equilibrium Physics",
+      "group": "core",
+      "val": 48
+    },
+    {
+      "id": "Self-organization & Pattern Formation",
+      "group": "core",
+      "val": 48
+    },
+    {
+      "id": "Modern Dynamics",
+      "group": "core",
+      "val": 46
+    },
+    {
+      "id": "Swarm Robotics",
+      "group": "core",
+      "val": 48
+    },
+    {
+      "id": "General Swarm Intelligence",
+      "group": "core",
+      "val": 46
+    },
+    {
+      "id": "Computer",
+      "group": "software",
+      "val": 14
+    },
+    {
+      "id": "Git",
+      "group": "software",
+      "val": 12
+    },
+    {
+      "id": "Python",
+      "group": "software",
+      "val": 18
+    },
+    {
+      "id": "C++",
+      "group": "software",
+      "val": 16
+    },
+    {
+      "id": "JavaScript",
+      "group": "software",
+      "val": 15
+    },
+    {
+      "id": "R",
+      "group": "software",
+      "val": 12
+    },
+    {
+      "id": "Julia",
+      "group": "software",
+      "val": 12
+    },
+    {
+      "id": "React",
+      "group": "software",
+      "val": 14
+    },
+    {
+      "id": "HTML",
+      "group": "software",
+      "val": 13
+    },
+    {
+      "id": "CSS",
+      "group": "software",
+      "val": 13
+    },
+    {
+      "id": "Web",
+      "group": "software",
+      "val": 13
+    },
+    {
+      "id": "OOP in Python",
+      "group": "software",
+      "val": 12
+    },
+    {
+      "id": "ArcGIS",
+      "group": "software",
+      "val": 12
+    },
+    {
+      "id": "NetLogo",
+      "group": "software",
+      "val": 12
+    },
+    {
+      "id": "Google Earth Engine (GEE)",
+      "group": "software",
+      "val": 12
+    },
+    {
+      "id": "Probability Theory",
+      "group": "math",
+      "val": 14
+    },
+    {
+      "id": "Mathematical Statistics",
+      "group": "math",
+      "val": 14
+    },
+    {
+      "id": "Advanced Spatial Statistics",
+      "group": "math",
+      "val": 13
+    },
+    {
+      "id": "Calculus",
+      "group": "math",
+      "val": 13
+    },
+    {
+      "id": "Linear Algebra",
+      "group": "math",
+      "val": 13
+    },
+    {
+      "id": "Bayesian Neural Fields",
+      "group": "math",
+      "val": 12
+    },
+    {
+      "id": "Nonlinear Dynamics",
+      "group": "physics",
+      "val": 13
+    },
+    {
+      "id": "Koopman Operator",
+      "group": "physics",
+      "val": 12
+    },
+    {
+      "id": "Fluid Dynamics",
+      "group": "physics",
+      "val": 12
+    },
+    {
+      "id": "Percolation Dynamics",
+      "group": "physics",
+      "val": 13
+    },
+    {
+      "id": "Renormalization Group",
+      "group": "physics",
+      "val": 13
+    },
+    {
+      "id": "Complex Networks",
+      "group": "networks",
+      "val": 18
+    },
+    {
+      "id": "Multilayer Network Visualization Software",
+      "group": "networks",
+      "val": 13
+    },
+    {
+      "id": "Hypergraph",
+      "group": "networks",
+      "val": 12
+    },
+    {
+      "id": "Machine Learning",
+      "group": "ml",
+      "val": 18
+    },
+    {
+      "id": "Physics-Informed Deep Learning",
+      "group": "ml",
+      "val": 14
+    },
+    {
+      "id": "Graph Neural Networks",
+      "group": "ml",
+      "val": 16
+    },
+    {
+      "id": "Geometric Deep Learning",
+      "group": "ml",
+      "val": 14
+    },
+    {
+      "id": "Deep Learning",
+      "group": "ml",
+      "val": 18
+    },
+    {
+      "id": "Reinforcement Learning",
+      "group": "ml",
+      "val": 16
+    },
+    {
+      "id": "Diffusion Models",
+      "group": "ml",
+      "val": 14
+    },
+    {
+      "id": "Principles of Deep Learning",
+      "group": "ml",
+      "val": 12
+    },
+    {
+      "id": "Entropy-Regularized Machine Learning",
+      "group": "ml",
+      "val": 12
+    },
+    {
+      "id": "Symbolic Machine Learning",
+      "group": "ml",
+      "val": 12
+    },
+    {
+      "id": "Causal Machine Learning",
+      "group": "ml",
+      "val": 12
+    },
+    {
+      "id": "Computer Vision",
+      "group": "ml",
+      "val": 12
+    },
+    {
+      "id": "Spatial Intelligence",
+      "group": "ml",
+      "val": 13
+    },
+    {
+      "id": "TensorFlow",
+      "group": "ml",
+      "val": 12
+    },
+    {
+      "id": "PyTorch",
+      "group": "ml",
+      "val": 12
+    },
+    {
+      "id": "Robotics Fundamentals",
+      "group": "robotics",
+      "val": 13
+    },
+    {
+      "id": "Swarm Control",
+      "group": "robotics",
+      "val": 14
+    },
+    {
+      "id": "Distributed Control",
+      "group": "robotics",
+      "val": 14
+    },
+    {
+      "id": "Spatial Agents",
+      "group": "robotics",
+      "val": 14
+    },
+    {
+      "id": "Productization",
+      "group": "robotics",
+      "val": 11
+    },
+    {
+      "id": "Research Methods",
+      "group": "methods",
+      "val": 14
+    },
+    {
+      "id": "Data Analysis",
+      "group": "methods",
+      "val": 13
+    },
+    {
+      "id": "Graphics",
+      "group": "methods",
+      "val": 12
+    },
+    {
+      "id": "Modeling and Simulation",
+      "group": "methods",
+      "val": 13
+    },
+    {
+      "id": "Spatial Algorithms",
+      "group": "methods",
+      "val": 13
+    },
+    {
+      "id": "Web Spider & Geospatial Web Data Visualization",
+      "group": "methods",
+      "val": 12
+    },
+    {
+      "id": "Advanced Statistics",
+      "group": "methods",
+      "val": 13
+    }
+  ],
+  "links": [
+    {
+      "source": "Computer",
+      "target": "Git"
+    },
+    {
+      "source": "Computer",
+      "target": "Python"
+    },
+    {
+      "source": "Computer",
+      "target": "C++"
+    },
+    {
+      "source": "Computer",
+      "target": "JavaScript"
+    },
+    {
+      "source": "Computer",
+      "target": "R"
+    },
+    {
+      "source": "Computer",
+      "target": "Julia"
+    },
+    {
+      "source": "Computer",
+      "target": "HTML"
+    },
+    {
+      "source": "Computer",
+      "target": "ArcGIS"
+    },
+    {
+      "source": "Computer",
+      "target": "NetLogo"
+    },
+    {
+      "source": "Computer",
+      "target": "Google Earth Engine (GEE)"
+    },
+    {
+      "source": "OOP in Python",
+      "target": "Python"
+    },
+    {
+      "source": "JavaScript",
+      "target": "React"
+    },
+    {
+      "source": "React",
+      "target": "Web"
+    },
+    {
+      "source": "HTML",
+      "target": "Web"
+    },
+    {
+      "source": "CSS",
+      "target": "Web"
+    },
+    {
+      "source": "JavaScript",
+      "target": "HTML"
+    },
+    {
+      "source": "HTML",
+      "target": "CSS"
+    },
+    {
+      "source": "Python",
+      "target": "TensorFlow"
+    },
+    {
+      "source": "Python",
+      "target": "PyTorch"
+    },
+    {
+      "source": "Python",
+      "target": "Data Analysis"
+    },
+    {
+      "source": "R",
+      "target": "Data Analysis"
+    },
+    {
+      "source": "Julia",
+      "target": "Modeling and Simulation"
+    },
+    {
+      "source": "ArcGIS",
+      "target": "Spatial Algorithms"
+    },
+    {
+      "source": "Google Earth Engine (GEE)",
+      "target": "Spatial Algorithms"
+    },
+    {
+      "source": "NetLogo",
+      "target": "Modeling and Simulation"
+    },
+    {
+      "source": "Probability Theory",
+      "target": "Mathematical Statistics"
+    },
+    {
+      "source": "Mathematical Statistics",
+      "target": "Advanced Statistics"
+    },
+    {
+      "source": "Mathematical Statistics",
+      "target": "Advanced Spatial Statistics"
+    },
+    {
+      "source": "Calculus",
+      "target": "Linear Algebra"
+    },
+    {
+      "source": "Linear Algebra",
+      "target": "Mathematical Statistics"
+    },
+    {
+      "source": "Probability Theory",
+      "target": "Bayesian Neural Fields"
+    },
+    {
+      "source": "Advanced Spatial Statistics",
+      "target": "Spatial Algorithms"
+    },
+    {
+      "source": "Advanced Statistics",
+      "target": "Research Methods"
+    },
+    {
+      "source": "Non-equilibrium Physics",
+      "target": "Modern Dynamics"
+    },
+    {
+      "source": "Modern Dynamics",
+      "target": "Nonlinear Dynamics"
+    },
+    {
+      "source": "Modern Dynamics",
+      "target": "Koopman Operator"
+    },
+    {
+      "source": "Nonlinear Dynamics",
+      "target": "Fluid Dynamics"
+    },
+    {
+      "source": "Nonlinear Dynamics",
+      "target": "Percolation Dynamics"
+    },
+    {
+      "source": "Renormalization Group",
+      "target": "Percolation Dynamics"
+    },
+    {
+      "source": "Renormalization Group",
+      "target": "Self-organization & Pattern Formation"
+    },
+    {
+      "source": "Non-equilibrium Physics",
+      "target": "Self-organization & Pattern Formation"
+    },
+    {
+      "source": "Non-equilibrium Physics",
+      "target": "Renormalization Group"
+    },
+    {
+      "source": "Self-organization & Pattern Formation",
+      "target": "Complex Networks"
+    },
+    {
+      "source": "Complex Networks",
+      "target": "Hypergraph"
+    },
+    {
+      "source": "Complex Networks",
+      "target": "Multilayer Network Visualization Software"
+    },
+    {
+      "source": "Complex Networks",
+      "target": "Percolation Dynamics"
+    },
+    {
+      "source": "Complex Networks",
+      "target": "Graph Neural Networks"
+    },
+    {
+      "source": "Machine Learning",
+      "target": "Deep Learning"
+    },
+    {
+      "source": "Deep Learning",
+      "target": "Principles of Deep Learning"
+    },
+    {
+      "source": "Deep Learning",
+      "target": "Diffusion Models"
+    },
+    {
+      "source": "Deep Learning",
+      "target": "Graph Neural Networks"
+    },
+    {
+      "source": "Deep Learning",
+      "target": "Computer Vision"
+    },
+    {
+      "source": "Machine Learning",
+      "target": "Reinforcement Learning"
+    },
+    {
+      "source": "Reinforcement Learning",
+      "target": "Swarm Robotics"
+    },
+    {
+      "source": "Machine Learning",
+      "target": "Symbolic Machine Learning"
+    },
+    {
+      "source": "Machine Learning",
+      "target": "Entropy-Regularized Machine Learning"
+    },
+    {
+      "source": "Machine Learning",
+      "target": "Causal Machine Learning"
+    },
+    {
+      "source": "Machine Learning",
+      "target": "Physics-Informed Deep Learning"
+    },
+    {
+      "source": "Graph Neural Networks",
+      "target": "Geometric Deep Learning"
+    },
+    {
+      "source": "Geometric Deep Learning",
+      "target": "Hypergraph"
+    },
+    {
+      "source": "Computer Vision",
+      "target": "Spatial Intelligence"
+    },
+    {
+      "source": "Spatial Intelligence",
+      "target": "Spatial Agents"
+    },
+    {
+      "source": "Spatial Intelligence",
+      "target": "Spatial Algorithms"
+    },
+    {
+      "source": "Swarm Robotics",
+      "target": "Robotics Fundamentals"
+    },
+    {
+      "source": "Swarm Robotics",
+      "target": "Swarm Control"
+    },
+    {
+      "source": "Swarm Robotics",
+      "target": "Distributed Control"
+    },
+    {
+      "source": "Swarm Robotics",
+      "target": "Spatial Agents"
+    },
+    {
+      "source": "Swarm Robotics",
+      "target": "Productization"
+    },
+    {
+      "source": "General Swarm Intelligence",
+      "target": "Swarm Robotics"
+    },
+    {
+      "source": "General Swarm Intelligence",
+      "target": "Self-organization & Pattern Formation"
+    },
+    {
+      "source": "Swarm Control",
+      "target": "Distributed Control"
+    },
+    {
+      "source": "Distributed Control",
+      "target": "Spatial Agents"
+    },
+    {
+      "source": "Research Methods",
+      "target": "Data Analysis"
+    },
+    {
+      "source": "Research Methods",
+      "target": "Graphics"
+    },
+    {
+      "source": "Research Methods",
+      "target": "Modeling and Simulation"
+    },
+    {
+      "source": "Research Methods",
+      "target": "Spatial Algorithms"
+    },
+    {
+      "source": "Research Methods",
+      "target": "Web Spider & Geospatial Web Data Visualization"
+    },
+    {
+      "source": "Research Methods",
+      "target": "Machine Learning"
+    },
+    {
+      "source": "Research Methods",
+      "target": "Complex Networks"
+    },
+    {
+      "source": "Research Methods",
+      "target": "Computer"
+    }
+  ]
+}
