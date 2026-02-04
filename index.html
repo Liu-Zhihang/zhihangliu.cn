@@ -519,6 +519,52 @@
                 padding-left: 0;
             }
         }
+
+        /* Experience Section - 内容左移并添加边框 */
+        #section-experience .container {
+            overflow: visible;
+        }
+
+        #section-experience .col-lg-8 {
+            margin-left: -100px;
+            padding-left: 0;
+            padding-right: 40px;
+        }
+
+        #section-experience .experience {
+            overflow: visible;
+        }
+
+        #section-experience .experience .col {
+            overflow: visible;
+        }
+
+        #section-experience .card {
+            border: 1px solid rgba(100, 120, 150, 0.4);
+            border-radius: 12px;
+            background: rgba(20, 25, 35, 0.6);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            max-width: 100%;
+        }
+
+        #section-experience .card:hover {
+            border-color: rgba(100, 150, 200, 0.5);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        /* 确保时间线圆点对齐 */
+        #section-experience .col-auto {
+            min-width: 40px;
+        }
+
+        @media (max-width: 991px) {
+            #section-experience .col-lg-8 {
+                margin-left: 0;
+                padding-right: 15px;
+            }
+        }
     </style>
 </head>
 
