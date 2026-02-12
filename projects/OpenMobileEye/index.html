@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile Spatial Attention with Wearable Eye Tracking | Open Mobile Eye</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <style>
+    :root{
+      --text:#1a1d24;
+      --muted:#5c6370;
+      --border:#e2e6ea;
+      --bg:#f7f8fb;
+      --content-max: 980px;
+    }
+    body{
+      padding:28px 0 64px;
+      background:var(--bg);
+      color:var(--text);
+      font-size:1.05rem;
+      line-height:1.7;
+    }
+    .back-link{ margin-bottom:24px; }
+    .back-link a{ color:var(--muted); text-decoration:none; }
+    .back-link a:hover{ color:var(--text); }
+
+    .hero{ max-width: var(--content-max); margin: 0 auto 1.25rem; }
+    .hero-cover{
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.10);
+      display:block;
+      margin: 0 auto 1rem;
+    }
+    @media (min-width: 768px){
+      .hero-cover{ margin: 0; }
+    }
+
+    .project-title{
+      font-size:1.85rem;
+      font-weight:600;
+      line-height:1.35;
+      margin:0 0 0.75rem;
+    }
+    .lead{
+      font-size:1.1rem;
+      color:var(--muted);
+      margin:0 0 1.25rem;
+    }
+
+    .section-head{
+      font-size:1.25rem;
+      font-weight:600;
+      margin:2.25rem auto 1rem;
+      padding-bottom:0.35rem;
+      border-bottom:1px solid var(--border);
+      max-width: var(--content-max);
+    }
+    .content-block{
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .content-block p{ margin: 0 0 0.9rem; }
+
+    /* Media */
+    .video-wrapper{
+      position:relative;
+      padding-bottom:56.25%;
+      height:0;
+      overflow:hidden;
+      max-width: var(--content-max);
+      margin: 1rem auto 1.5rem;
+      background:#000;
+      border-radius:10px;
+    }
+    .video-wrapper iframe,
+    .video-wrapper video{ position:absolute; top:0; left:0; width:100%; height:100%; }
+
+    .img-row.row{ max-width: var(--content-max); margin: 1rem auto 1.25rem; }
+    .img-col{ margin-bottom: 0.75rem; }
+    .img-col img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      box-shadow:0 2px 14px rgba(0,0,0,0.10);
+      object-fit:cover;
+    }
+    .caption{
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: var(--content-max);
+      margin: -0.5rem auto 1.25rem;
+    }
+    .ref{
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .ref a{ color: inherit; text-decoration: underline; }
+
+    .callout{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.65);
+      border-radius: 10px;
+      padding: 14px 16px;
+      max-width: var(--content-max);
+      margin: 1rem auto 0;
+    }
+    .footer-link{
+      max-width: var(--content-max);
+      margin: 2.5rem auto 0;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .footer-link a{ color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="back-link">
+      <a href="https://zhihangliu.cn/#research">&larr; Back to Research</a>
+    </div>
+
+    <div class="hero row align-items-start">
+      <div class="col-md-4">
+        <img class="hero-cover" src="../../assets/images/eye.png" alt="Open Mobile Eye cover">
+      </div>
+      <div class="col-md-8">
+        <h1 class="project-title">Modeling Mobile Spatial Attention with Wearable Eye Tracking for Human–Machine Alignment</h1>
+        <p class="lead">I am developing an open, extensible wearable eye-tracking system to measure how attention is distributed in real mobile environments, map gaze into 3D/semantic space, and study whether human attention can serve as a supervision signal for safer and more interpretable machine attention.</p>
+      </div>
+    </div>
+
+    <h2 class="section-head">Motivation</h2>
+    <div class="content-block">
+      <p>Attention research has a long tradition in controlled laboratory settings. However, when people move through real urban spaces, visual input, body motion, task goals, and environmental semantics interact continuously. In this project, I focus on the spatial organization of attention in the wild, aiming to describe it with measurable structures rather than anecdotal observations.</p>
+      <p>At the same time, robotics and autonomous driving systems often rely on internal attention maps. Whether these machine attention patterns are aligned with human attention remains unclear, and the answer matters for safety, failure diagnosis, and interpretability.</p>
+    </div>
+
+    <h2 class="section-head">Research Questions</h2>
+    <div class="content-block">
+      <p><strong>How is attention organized in space while moving?</strong> I ask whether attention exhibits stable spatial structure across routes and participants, whether there are repeatable “topological key points” (such as intersections and turning points), and whether the distribution can be characterized by quantitative measures including entropy, bias, and scale.</p>
+      <p><strong>Can human attention be used as a training signal for machines?</strong> I explore how gaze can be mapped into world coordinates and semantic maps, how to define attention alignment metrics between humans and models, and whether alignment can improve safety and interpretability in downstream decision-making.</p>
+    </div>
+
+    <h2 class="section-head">Wearable Eye-Tracking in the Wild</h2>
+    <div class="content-block">
+      <p>The system is designed for mobile data collection: it records eye images and estimates gaze, while maintaining stable timing and providing interfaces for mapping gaze into 3D reconstructions and semantic representations.</p>
+    </div>
+
+    <div class="img-row row">
+      <div class="col-md-6 img-col">
+        <img src="../../assets/images/eyetrace_2.png" alt="Eye tracking monitoring">
+      </div>
+      <div class="col-md-6 img-col">
+        <img src="../../assets/images/eyetrace.png" alt="Prototype overview of Open Mobile Eye">
+      </div>
+    </div>
+    <p class="caption">Left: eye tracking monitoring snapshot. Right: prototype overview (design sketch and 3D-printed assembly).</p>
+
+    <div class="video-wrapper">
+      <video src="../../assets/images/eyetrace.mp4" controls playsinline></video>
+    </div>
+    <p class="ref content-block">Video source reference: <a href="https://www.youtube.com/watch?v=1bWKuBo7aqU" target="_blank" rel="noopener">YouTube</a>.</p>
+
+    <h2 class="section-head">Reference Devices and Why Open Hardware</h2>
+    <div class="content-block">
+      <p>Commercial wearable eye trackers (e.g., Tobii Pro Glasses 3 and Pupil Labs Core/Invisible) provide strong performance, but their cost and closed algorithms make it difficult to reproduce results, deeply modify pipelines, or run large-scale long-term studies. For research on mechanisms—rather than a single application demo—control over calibration, error propagation, and data interfaces is essential.</p>
+      <p>This is why I decided to build an open system from scratch, prioritizing transparency, extensibility, and reproducibility.</p>
+    </div>
+
+    <div class="img-row row">
+      <div class="col-md-6 img-col">
+        <img src="../../assets/images/eyetrace_4.jpg" alt="Tobii Pro Glasses 3 product photo">
+      </div>
+      <div class="col-md-6 img-col">
+        <img src="../../assets/images/Pupil.png" alt="Pupil Labs wearable eye tracker">
+      </div>
+    </div>
+    <div class="content-block ref">
+      <p>Images: Tobii Pro Glasses 3 (<a href="https://www.tobii.com/products/eye-trackers/wearables/tobii-pro-glasses-3" target="_blank" rel="noopener">official page</a>), Pupil Labs (<a href="https://docs.pupil-labs.com/" target="_blank" rel="noopener">documentation</a>).</p>
+    </div>
+
+    <h2 class="section-head">Our Approach: Open Mobile Eye</h2>
+    <div class="content-block">
+      <p>The core idea is to use cost-effective miniature infrared cameras, a lightweight 3D-printed frame, and open algorithms for pupil detection and gaze estimation. The system is also designed with interfaces for future integration with vision-language models for semantic mapping.</p>
+      <p>For the algorithmic foundation, I refer to open eye-tracking research frameworks (e.g., works by Jason Orlosky and collaborators), and adapt the pipeline to mobile scenarios with explicit calibration and synchronization considerations.</p>
+      <div class="callout">
+        <div class="ref">Related open-source research: <a href="https://github.com/JEOresearch" target="_blank" rel="noopener">https://github.com/JEOresearch</a></div>
+      </div>
+    </div>
+
+    <h2 class="section-head">Human–Machine Attention Alignment</h2>
+    <div class="content-block">
+      <p>Beyond recording gaze points, the project aims to map attention into world coordinates and semantic space, so that human attention can be compared with model attention in a shared representation. This supports the definition of alignment metrics and enables controlled studies on how alignment relates to safety and interpretability.</p>
+    </div>
+
+    <div class="video-wrapper">
+      <video src="../../assets/images/vision.mp4" controls playsinline></video>
+    </div>
+    <p class="caption">Visual attention example video used for alignment and qualitative evaluation.</p>
+
+    <h2 class="section-head">Performance Targets and Current Status</h2>
+    <div class="content-block">
+      <p>The goal is not to chase the absolute maximum precision of commercial systems, but to reach accuracy and stability that are practical for everyday research. The current prototype is designed for stable time synchronization, lightweight wearing experience, and long-duration data collection, with all data and processing steps intended to remain open.</p>
+      <p>In ongoing tests, the prototype already supports typical scenarios such as urban walking, indoor navigation, target searching tasks, and initial human–machine attention alignment experiments.</p>
+    </div>
+
+    <h2 class="section-head">Next Steps</h2>
+    <div class="content-block">
+      <p>Near-term work focuses on improving calibration procedures, optimizing infrared illumination and mechanical design, integrating semantic mapping with modern vision models, and preparing a public release of hardware files and code for reproducible experiments.</p>
+    </div>
+
+    <p class="footer-link"><a href="https://zhihangliu.cn/#research">&larr; Back to Research</a></p>
+  </div>
+</body>
+</html>
