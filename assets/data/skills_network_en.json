@@ -26,6 +26,11 @@
       "val": 46
     },
     {
+      "id": "Physics-Informed Spatial Intelligence",
+      "group": "core",
+      "val": 46
+    },
+    {
       "id": "Computer",
       "group": "software",
       "val": 14
@@ -586,6 +591,18 @@
     {
       "source": "General Swarm Intelligence",
       "target": "Self-organization & Pattern Formation"
+    },
+    {
+      "source": "Physics-Informed Spatial Intelligence",
+      "target": "General Swarm Intelligence"
+    },
+    {
+      "source": "Physics-Informed Spatial Intelligence",
+      "target": "Spatial Intelligence"
+    },
+    {
+      "source": "Physics-Informed Spatial Intelligence",
+      "target": "Physics-Informed Deep Learning"
     },
     {
       "source": "Swarm Control",

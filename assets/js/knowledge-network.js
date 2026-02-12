@@ -64,7 +64,10 @@
             { id: "distributed", name: "Distributed Control", group: "robotics", val: 14 },
             { id: "swarm_intel", name: "Swarm Intelligence", group: "robotics", val: 16 },
             { id: "spatial_agent", name: "Spatial Agents", group: "robotics", val: 14 },
-            { id: "spatial_intel", name: "Spatial Intelligence", group: "robotics", val: 16 }
+            { id: "spatial_intel", name: "Spatial Intelligence", group: "robotics", val: 16 },
+
+            // 一级节点：物理信息空间智能（与 General Swarm Intelligence 同经度）
+            { id: "physics_spatial_intel", name: "Physics-Informed Spatial Intelligence", group: "core", val: 32 }
         ],
         links: [
             // 编程连接
@@ -128,7 +131,12 @@
             { source: "web", target: "spatial_agent" },
             { source: "complex", target: "swarm" },
             { source: "spatial_stats", target: "spatial_intel" },
-            { source: "pinn", target: "dynamics" }
+            { source: "pinn", target: "dynamics" },
+
+            // 物理信息空间智能：与 Swarm Intelligence 同侧，置于底部
+            { source: "physics_spatial_intel", target: "swarm_intel" },
+            { source: "spatial_intel", target: "physics_spatial_intel" },
+            { source: "pinn", target: "physics_spatial_intel" }
         ]
     };
 

@@ -19,7 +19,8 @@
     "Self-organization & Pattern Formation",
     "Modern Dynamics",
     "Swarm Robotics",
-    "General Swarm Intelligence"
+    "General Swarm Intelligence",
+    "Physics-Informed Spatial Intelligence"
   ];
   var coreTopIds = [
     "Non-equilibrium Physics",
@@ -28,7 +29,8 @@
   ];
   var coreBottomIds = [
     "Swarm Robotics",
-    "General Swarm Intelligence"
+    "General Swarm Intelligence",
+    "Physics-Informed Spatial Intelligence"
   ];
   var groupCoreMap = {
     software: "Modern Dynamics",
@@ -50,20 +52,24 @@
   var coreRightShiftX = -120;
   var coreGlobalShiftX = -80;
   var coreGlobalShiftY = 95;
+  var coreOnlyShiftDown = 0.3 * coreSpacing;  // 仅一级节点整体下移 0.3
   var coreMidExtraUp = 28;
   var coreGsiDown = -18;
+  var coreGsiX = coreColumnRight + coreRightShiftX - 30 + coreGlobalShiftX;
   var coreTargetPos = {
-    "Non-equilibrium Physics": { x: coreColumnLeft + coreLeftShiftX - 30 + coreGlobalShiftX, y: coreSpacing * 2.1 * coreYSign + coreLeftShiftY + coreGlobalShiftY },
-    "Self-organization & Pattern Formation": { x: coreColumnLeft + coreLeftShiftX - 30 + coreGlobalShiftX, y: coreSpacing * 1.2 * coreYSign + coreLeftShiftY + coreGlobalShiftY + coreMidExtraUp },
-    "Modern Dynamics": { x: coreColumnLeft + coreLeftShiftX + coreGlobalShiftX - 30, y: coreSpacing * 0.3 * coreYSign + coreLeftShiftY + 15 + coreGlobalShiftY + coreMidExtraUp },
-    "Swarm Robotics": { x: coreColumnRight + coreRightShiftX - 30 + coreGlobalShiftX, y: coreSpacing * 1.6 * coreYSign + coreGlobalShiftY },
-    "General Swarm Intelligence": { x: coreColumnRight + coreRightShiftX - 30 + coreGlobalShiftX, y: coreSpacing * 2.6 * coreYSign + coreGlobalShiftY + coreGsiDown }
+    "Non-equilibrium Physics": { x: coreColumnLeft + coreLeftShiftX - 30 + coreGlobalShiftX, y: coreSpacing * 2.1 * coreYSign + coreLeftShiftY + coreGlobalShiftY - coreOnlyShiftDown },
+    "Self-organization & Pattern Formation": { x: coreColumnLeft + coreLeftShiftX - 30 + coreGlobalShiftX, y: coreSpacing * 1.2 * coreYSign + coreLeftShiftY + coreGlobalShiftY + coreMidExtraUp - coreOnlyShiftDown },
+    "Modern Dynamics": { x: coreColumnLeft + coreLeftShiftX + coreGlobalShiftX - 30, y: coreSpacing * 0.3 * coreYSign + coreLeftShiftY + 15 + coreGlobalShiftY + coreMidExtraUp - coreOnlyShiftDown },
+    "Swarm Robotics": { x: coreColumnRight + coreRightShiftX - 30 + coreGlobalShiftX, y: coreSpacing * 1.6 * coreYSign + coreGlobalShiftY - coreOnlyShiftDown },
+    "General Swarm Intelligence": { x: coreGsiX, y: coreSpacing * 2.6 * coreYSign + coreGlobalShiftY + coreGsiDown - coreOnlyShiftDown },
+    "Physics-Informed Spatial Intelligence": { x: coreGsiX, y: coreSpacing * 0.8 * coreYSign + coreGlobalShiftY + coreGsiDown - coreOnlyShiftDown }
   };
   var coreTargets = coreIds.map(function (id) { return coreTargetPos[id] || { x: coreX, y: 0 }; });
   var coreXValues = coreTargets.map(function (pos) { return pos.x; });
   var coreYValues = coreTargets.map(function (pos) { return pos.y; });
   var coreXCenter = (Math.min.apply(Math, coreXValues) + Math.max.apply(Math, coreXValues)) / 2;
-  var coreYCenter = (Math.min.apply(Math, coreYValues) + Math.max.apply(Math, coreYValues)) / 2;
+  // 视口中心用“未下移”的 y，这样一级节点下移后会在画面中明显偏下
+  var coreYCenter = (Math.min.apply(Math, coreYValues) + Math.max.apply(Math, coreYValues)) / 2 + coreOnlyShiftDown;
   var coreViewOffsetY = -70;
 
   var showError = function (message) {

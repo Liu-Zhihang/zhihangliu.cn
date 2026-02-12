@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quadruped Robot Hardware and Swarm Intelligence | Evolution Tech</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <style>
+        :root {
+            --text: #1a1d24;
+            --muted: #5c6370;
+            --border: #e2e6ea;
+            --bg: #f7f8fb;
+        }
+        body { padding: 28px 0 64px; background: var(--bg); color: var(--text); font-size: 1.05rem; line-height: 1.65; }
+        .back-link { margin-bottom: 24px; }
+        .back-link a { color: var(--muted); text-decoration: none; }
+        .back-link a:hover { color: var(--text); }
+        .project-title { font-size: 1.85rem; font-weight: 600; margin-bottom: 1rem; line-height: 1.35; }
+        .lead { font-size: 1.1rem; color: var(--muted); margin-bottom: 2rem; max-width: 720px; }
+        .section-head { font-size: 1.25rem; font-weight: 600; margin: 2.25rem 0 1rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--border); }
+        .subsection { margin-bottom: 1.5rem; }
+        .subsection h3 { font-size: 1.1rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+        .subsection p { margin-bottom: 0.5rem; max-width: 720px; }
+        /* Video wrapper: 16:9, max width for consistency */
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 720px; margin: 1.25rem auto; background: #000; border-radius: 8px; }
+        .video-wrapper iframe, .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        /* Centered, constrained images */
+        .media-block { margin: 1.5rem 0; text-align: center; }
+        .media-block img { max-width: 100%; width: 640px; height: auto; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: block; margin-left: auto; margin-right: auto; }
+        .media-block img + img { margin-top: 1rem; }
+        .media-caption { font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; max-width: 640px; margin-left: auto; margin-right: auto; }
+        /* Table: centered, readable */
+        .table-wrap { overflow-x: auto; margin: 1.25rem 0; }
+        .table-wrap table { width: 100%; max-width: 720px; margin: 0 auto; border-collapse: collapse; font-size: 0.95rem; }
+        .table-wrap th, .table-wrap td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; }
+        .table-wrap th { background: rgba(0,0,0,0.04); font-weight: 600; }
+        .footer-link { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        .footer-link a { color: var(--muted); }
+        /* One row, two images side by side (Bootstrap row + col-md-6) */
+        .img-row.row { margin: 1rem 0 1.5rem; }
+        .img-row .img-col { margin-bottom: 0.5rem; }
+        .img-row .img-col img { width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); object-fit: cover; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-link">
+            <a href="https://zhihangliu.cn/#research">&larr; Back to Research</a>
+        </div>
+
+        <h1 class="project-title">Quadruped Robot Hardware and Swarm Intelligence: From Single-Agent Motion Control to Multi-Agent Coordination</h1>
+        <p class="lead">Our team at Evolution Tech Co., Ltd. is developing an open-source, cost-effective quadruped robot platform aimed at bridging single-agent motion control and multi-agent swarm coordination. The project covers mechanical design, embedded software, and algorithms for dynamic locomotion and cooperative behaviors.</p>
+
+        <!-- Project video -->
+        <h2 class="section-head">Project Video</h2>
+        <p class="subsection">Below is a short demonstration of our quadruped platform capabilities, including dynamic gaits and coordinated maneuvers.</p>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/uJhFKqU883Q?start=114" title="Quadruped robot and swarm intelligence" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- What we have achieved -->
+        <h2 class="section-head">What We Have Achieved</h2>
+
+        <div class="subsection">
+            <h3>Motion control</h3>
+            <p>We provide high-dynamic motion control algorithms that support agile behaviors such as backflips, jumping, and inverted poses. The stack is designed for real-time execution on onboard compute and is extensible for custom tricks and terrain adaptation.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Hardware–software integration</h3>
+            <p>Our platform is built as an integrated system: mechanical structure, electronics, and embedded software are co-designed. This includes actuator selection and placement, power distribution, and low-level firmware for joint control and state estimation.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Vision and perception</h3>
+            <p>We integrate vision-based perception for navigation and interaction: visual SLAM for localization and mapping, object following, and terrain recognition. The pipeline leverages deep learning where appropriate and runs on the robot’s onboard computer.</p>
+        </div>
+
+        <div class="img-row row">
+            <div class="col-md-6 img-col"><img src="../../assets/images/SLAM_1.png" alt="Visual SLAM: mapping and localization"></div>
+            <div class="col-md-6 img-col"><img src="../../assets/images/SLAM_2.png" alt="Visual SLAM: reconstructed structure"></div>
+        </div>
+        <p class="media-caption" style="max-width:100%;">Left: example mapping and localization. Right: another scene with reconstructed structure.</p>
+
+        <!-- Specs table -->
+        <h2 class="section-head">Platform Specifications</h2>
+        <p class="subsection">We offer two main platforms: the compact Q1 quadruped and the larger Y1 wheel-legged robot. Key parameters are summarized below.</p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter / Model</th>
+                        <th>Q1 Quadruped</th>
+                        <th>Y1 Wheel-Legged</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Weight (with battery)</td><td>~10 kg</td><td>~40 kg</td></tr>
+                    <tr><td>Standing size (L×W×H)</td><td>58 × 30 × 35 cm</td><td>85 × 62 × 55 cm</td></tr>
+                    <tr><td>Folded / prone size (L×W×H)</td><td>65 × 30 × 15 cm</td><td>92 × 62 × 30 cm</td></tr>
+                    <tr><td>Max speed</td><td>3 m/s</td><td>3 m/s</td></tr>
+                    <tr><td>Runtime</td><td>~1–2 h</td><td>~4–8 h</td></tr>
+                    <tr><td>Payload</td><td>3 kg</td><td>25 kg</td></tr>
+                    <tr><td>Max step height</td><td>24 cm</td><td>40 cm</td></tr>
+                    <tr><td>Stair height (continuous)</td><td>16 cm</td><td>25 cm</td></tr>
+                    <tr><td>Max slope</td><td>30°</td><td>30°</td></tr>
+                    <tr><td>Degrees of freedom (DOF)</td><td>12</td><td>16</td></tr>
+                    <tr><td>Onboard compute</td><td>8-core CPU</td><td>8-core CPU</td></tr>
+                    <tr><td>Peak torque</td><td>17 N·m</td><td>~120 N·m</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Q1 Quadruped -->
+        <h2 class="section-head">Q1 Quadruped</h2>
+        <p class="subsection">The Q1 is our compact quadruped for research and development: lightweight, modular, and suitable for indoor and outdoor experiments and swarm setups.</p>
+        <div class="img-row row">
+            <div class="col-md-6 img-col"><img src="../../assets/images/Q1_1.jpg" alt="Q1 quadruped robot 1"></div>
+            <div class="col-md-6 img-col"><img src="../../assets/images/Q1_2.jpg" alt="Q1 quadruped robot 2"></div>
+        </div>
+
+        <!-- Y1 Wheel-Legged -->
+        <h2 class="section-head">Y1 Wheel-Legged Robot</h2>
+        <p class="subsection">The Y1 platform combines legs and wheels for robust mobility on mixed terrain and longer missions, with higher payload and runtime.</p>
+        <div class="img-row row">
+            <div class="col-md-6 img-col"><img src="../../assets/images/Y1_1.jpg" alt="Y1 wheel-legged robot 1"></div>
+            <div class="col-md-6 img-col"><img src="../../assets/images/Y1_2.jpg" alt="Y1 wheel-legged robot 2"></div>
+        </div>
+        <p class="subsection">Demo video: typical locomotion and payload handling.</p>
+        <div class="video-wrapper">
+            <video src="../../assets/images/Y1_vedio.mp4" controls playsinline></video>
+        </div>
+
+        <p class="footer-link"><a href="https://zhihangliu.cn/#research">&larr; Back to Research</a></p>
+    </div>
+</body>
+</html>

@@ -20,9 +20,7 @@
     <meta name="theme-color" content="#1565c0">
     <link rel="stylesheet" href="assets/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css">
     <!-- <link rel=“stylesheet” href=“https://use.fontawesome.com/releases/v5.15.4/css/all.css” media="all" onload="this.media='all';"> -->
-    <link rel="stylesheet" href="assets/css/academicons.min.css"
-        integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA=="
-        crossorigin="anonymous" media="all" onload="this.media='all';">
+    <!-- 本地 academicons 已移除，仅用上方 CDN，避免 assets/fonts 缺失 ttf/woff 导致 404 -->
     <link rel="stylesheet" href="assets/css/github.min.css" crossorigin="anonymous" title="hl-light" media="all"
         onload="this.media='all';">
     <link rel="stylesheet" href="assets/css/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print"
@@ -197,9 +195,13 @@
         }
 
         #profile.profile-card {
-            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
             padding: 0 0 6px;
             padding-top: 8px;
+            min-height: calc(100vh - 46px);
         }
 
         #profile.profile-card .avatar {
@@ -209,25 +211,135 @@
         }
 
         #profile.profile-card .portrait-title h2 {
-            font-size: 1.05rem;
+            font-size: 0.94rem;
+            margin-bottom: 6px;
+        }
+
+        #profile.profile-card .portrait-title .name-zh {
+            font-size: 0.9rem;
             margin-bottom: 10px;
         }
 
         #profile.profile-card .portrait-title h3 {
-            font-size: 0.76rem;
+            font-size: 0.72rem;
             color: var(--text-muted);
-            line-height: 1.5;
+            line-height: 1.42;
             margin-bottom: 6px;
             font-weight: 500;
         }
 
+        #profile.profile-card .portrait-title .research-keywords {
+            font-size: 0.67rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        #profile.profile-card .portrait-title .research-keywords .keyword-line {
+            display: block;
+            white-space: nowrap;
+            margin-bottom: 0.18rem;
+        }
+
+        #profile.profile-card .portrait-title .research-keywords .keyword-line:last-child {
+            margin-bottom: 0;
+        }
+
         #profile.profile-card .network-icon {
-            justify-content: flex-start;
+            justify-content: center;
             margin-top: 10px;
         }
 
         #profile.profile-card .network-icon .big-icon {
             font-size: 0.9rem;
+        }
+
+        #profile.profile-card .sidebar-resume-link {
+            display: block;
+            width: 100%;
+            margin-top: 12px;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        #profile.profile-card .sidebar-resume-link:hover,
+        #profile.profile-card .sidebar-resume-link:focus {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        #profile.profile-card .sidebar-resume-link .resume-word {
+            color: var(--accent-color);
+        }
+
+        #profile.profile-card .sidebar-contact {
+            margin-top: auto;
+            width: 100%;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+            text-align: left;
+            font-size: 0.64rem;
+            line-height: 1.45;
+            color: var(--text-muted);
+        }
+
+        #profile.profile-card .sidebar-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 7px;
+            margin-bottom: 6px;
+        }
+
+        #profile.profile-card .sidebar-contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        #profile.profile-card .sidebar-contact-item i {
+            margin-top: 2px;
+            color: var(--accent-color);
+            width: 0.9rem;
+        }
+
+        #profile.profile-card .sidebar-contact a,
+        #profile.profile-card .sidebar-contact span {
+            color: var(--text-muted);
+            word-break: break-word;
+        }
+
+        #profile.profile-card .sidebar-contact a:hover,
+        #profile.profile-card .sidebar-contact a:focus {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .education-list,
+        .abroad-list {
+            list-style: disc;
+            padding-left: 1.2rem;
+        }
+
+        .about-bio .education-heading {
+            font-size: 0.94rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .education-list {
+            margin-bottom: 0.3rem;
+        }
+
+        .abroad-list {
+            margin-bottom: 0;
+        }
+
+        .education-list li,
+        .abroad-list li {
+            font-size: 0.86rem;
+            line-height: 1.7;
+            margin-bottom: 0.3rem;
         }
 
         .site-main {
@@ -278,12 +390,80 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            margin-right: 44px;
         }
 
         .page-action-link {
             color: inherit;
             font-size: 1rem;
             padding: 6px 0;
+        }
+
+        .page-search-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .page-search-action .shortcut-key {
+            font-size: 0.66rem;
+            line-height: 1.1;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 2px 5px;
+            letter-spacing: 0.02em;
+        }
+
+        .lang-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lang-action .lang-text {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+
+        #wechat-modal .modal-dialog {
+            max-width: 420px;
+        }
+
+        #wechat-modal .modal-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        #wechat-modal .wechat-modal-body {
+            text-align: center;
+        }
+
+        #wechat-modal .wechat-qr-img {
+            width: min(260px, 80vw);
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(120, 130, 150, 0.32);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+            display: block;
+            margin: 10px auto 12px;
+        }
+
+        #wechat-modal .wechat-copy {
+            font-size: 0.9rem;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        #search-box #site-search-query {
+            border: 1px solid #dedede;
+            border-radius: 1rem;
+            padding: 1rem 1rem 1rem 2rem;
+            width: 250px;
+            line-height: 1rem;
+            height: 1rem;
+            font-size: .8rem;
         }
 
         .page-action-link:hover {
@@ -299,6 +479,11 @@
             display: block;
         }
 
+        /* Blog 列表：限制正文宽度，封面位置 */
+        #posts.wg-pages .media.stream-item .media-body {
+            max-width: 67%;
+        }
+
         .about-grid {
             display: grid;
             grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
@@ -309,13 +494,26 @@
             min-height: 900px;
         }
 
+        /* 白天主题：简介/教育区块 浅色背景 + 深色字 */
         .about-bio {
             position: relative;
             z-index: 3;
             padding: 10px 14px;
             border-radius: 12px;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.32) 45%, rgba(255, 255, 255, 0.18) 100%);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 249, 252, 0.95) 100%);
             backdrop-filter: blur(2px);
+            color: #1a1d24;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        .about-bio h1,
+        .about-bio .article-style,
+        .about-bio .education-heading,
+        .about-bio .education-list li,
+        .about-bio .abroad-list li {
+            color: inherit;
+        }
+        .about-bio .article-style a {
+            color: #1565c0;
         }
 
         body.dark .about-bio,
@@ -323,6 +521,25 @@
         [data-theme="dark"] .about-bio {
             background: linear-gradient(180deg, rgba(12, 14, 20, 0.36) 0%, rgba(12, 14, 20, 0.28) 45%, rgba(12, 14, 20, 0.12) 100%);
             box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+            color: inherit;
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+        body.dark .about-bio h1,
+        body.theme-dark .about-bio h1,
+        [data-theme="dark"] .about-bio h1,
+        body.dark .about-bio .article-style,
+        body.theme-dark .about-bio .article-style,
+        [data-theme="dark"] .about-bio .article-style,
+        body.dark .about-bio .education-heading,
+        body.theme-dark .about-bio .education-heading,
+        [data-theme="dark"] .about-bio .education-heading,
+        body.dark .about-bio .education-list li,
+        body.theme-dark .about-bio .education-list li,
+        [data-theme="dark"] .about-bio .education-list li,
+        body.dark .about-bio .abroad-list li,
+        body.theme-dark .about-bio .abroad-list li,
+        [data-theme="dark"] .about-bio .abroad-list li {
+            color: inherit;
         }
 
         .about-skills {
@@ -341,6 +558,7 @@
             z-index: 2;
         }
 
+        /* 白天主题：Skills 区域浅色背景 */
         #skills-window {
             position: absolute;
             inset: 0;
@@ -350,10 +568,17 @@
             max-height: none;
             border-radius: 18px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            background: linear-gradient(160deg, rgba(250, 251, 253, 0.98), rgba(245, 247, 252, 0.95));
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            backdrop-filter: blur(2px);
+        }
+        body.dark #skills-window,
+        body.theme-dark #skills-window,
+        [data-theme="dark"] #skills-window {
+            border-color: rgba(255, 255, 255, 0.08);
             background: radial-gradient(circle at 20% 20%, rgba(16, 20, 28, 0.38), rgba(6, 8, 12, 0.45));
             box-shadow: 0 12px 30px rgba(5, 8, 14, 0.35);
-            backdrop-filter: blur(2px);
         }
 
         #skills-graph {
@@ -392,19 +617,21 @@
             margin-right: 0;
         }
 
-        #about h1 {
-            font-size: 2.05rem;
+        #about .about-bio>h1 {
+            font-size: 1.9rem;
             font-weight: 600;
             margin: 0 0 12px;
         }
 
-        #about .article-style p {
-            font-size: 0.98rem;
+        #about .about-bio .article-style p {
+            font-size: 0.86rem;
             line-height: 1.7;
         }
 
         .about-skills .section-heading h1 {
-            font-size: 1.25rem;
+            font-size: 2.05rem;
+            font-weight: 600;
+            margin: 0;
         }
 
 
@@ -481,8 +708,10 @@
 
             #profile.profile-card {
                 display: flex;
+                flex-direction: column;
                 align-items: center;
-                gap: 16px;
+                gap: 12px;
+                min-height: auto;
             }
 
             #profile.profile-card .avatar {
@@ -492,7 +721,7 @@
             }
 
             #profile.profile-card .portrait-title {
-                text-align: left;
+                text-align: center;
             }
 
             .page-tabs {
@@ -508,6 +737,7 @@
             .page-actions {
                 width: 100%;
                 justify-content: flex-start;
+                margin-right: 0;
             }
 
             .about-grid {
@@ -531,6 +761,10 @@
             padding-right: 40px;
         }
 
+        #section-experience .section-heading h1 {
+            font-size: 2.05rem;
+        }
+
         #section-experience .experience {
             overflow: visible;
         }
@@ -539,19 +773,46 @@
             overflow: visible;
         }
 
+        /* 白天主题：工作经验卡片 浅色背景 + 深色字 */
         #section-experience .card {
-            border: 1px solid rgba(100, 120, 150, 0.4);
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 12px;
-            background: rgba(20, 25, 35, 0.6);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(8px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
             max-width: 100%;
+            color: #1a1d24;
         }
-
+        #section-experience .card .card-title,
+        #section-experience .card .article-style {
+            color: inherit;
+        }
         #section-experience .card:hover {
+            border-color: rgba(21, 101, 192, 0.35);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+        }
+        body.dark #section-experience .card,
+        body.theme-dark #section-experience .card,
+        [data-theme="dark"] #section-experience .card {
+            border-color: rgba(100, 120, 150, 0.4);
+            background: rgba(20, 25, 35, 0.6);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            color: inherit;
+        }
+        body.dark #section-experience .card:hover,
+        body.theme-dark #section-experience .card:hover,
+        [data-theme="dark"] #section-experience .card:hover {
             border-color: rgba(100, 150, 200, 0.5);
             box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+        }
+        body.dark #section-experience .card .card-title,
+        body.theme-dark #section-experience .card .card-title,
+        [data-theme="dark"] #section-experience .card .card-title,
+        body.dark #section-experience .card .article-style,
+        body.theme-dark #section-experience .card .article-style,
+        [data-theme="dark"] #section-experience .card .article-style {
+            color: inherit;
         }
 
         /* 确保时间线圆点对齐 */
@@ -566,27 +827,110 @@
             }
         }
 
-        /* Contact Section - 内容左移与 Experience 对齐 */
-        #contact .col-lg-8 {
-            margin-left: -100px;
-            padding-left: 0;
-        }
-
-        @media (max-width: 991px) {
-            #contact .col-lg-8 {
-                margin-left: 0;
-            }
-        }
-
-        /* News Section - 内容左移与 Experience 对齐 */
+        /* News Section - 内容再往左移 */
         #Presentions .col-lg-8 {
-            margin-left: -100px;
+            margin-left: -160px;
             padding-left: 0;
         }
 
         @media (max-width: 991px) {
             #Presentions .col-lg-8 {
                 margin-left: 0;
+            }
+        }
+
+        /* Notebook Section - 缩小封面卡片尺寸 */
+        .notebook-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            max-width: 780px;
+        }
+
+        /* 白天主题：Notebook 卡片（含标题栏）浅色背景 + 深色字 */
+        .notebook-card {
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(6px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            color: #1a1d24;
+        }
+        .notebook-meta,
+        .notebook-title {
+            color: inherit;
+        }
+        .notebook-links .btn {
+            color: #1565c0;
+            border-color: rgba(21, 101, 192, 0.4);
+        }
+        .notebook-links .btn:hover {
+            background: rgba(21, 101, 192, 0.08);
+        }
+        body.dark .notebook-card,
+        body.theme-dark .notebook-card,
+        [data-theme="dark"] .notebook-card {
+            border-color: rgba(100, 120, 150, 0.42);
+            background: rgba(20, 25, 35, 0.58);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
+            color: inherit;
+        }
+        body.dark .notebook-meta,
+        body.theme-dark .notebook-meta,
+        [data-theme="dark"] .notebook-meta,
+        body.dark .notebook-title,
+        body.theme-dark .notebook-title,
+        [data-theme="dark"] .notebook-title {
+            color: inherit;
+        }
+        body.dark .notebook-links .btn,
+        body.theme-dark .notebook-links .btn,
+        [data-theme="dark"] .notebook-links .btn {
+            color: inherit;
+            border-color: inherit;
+        }
+
+        .notebook-cover {
+            display: block;
+        }
+
+        .notebook-cover img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+        }
+
+        .notebook-meta {
+            padding: 10px 12px 12px;
+        }
+
+        .notebook-title {
+            font-size: 0.96rem;
+            line-height: 1.35;
+            margin: 0 0 10px;
+            font-weight: 600;
+        }
+
+        .notebook-links {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 6px;
+        }
+
+        .notebook-links .btn {
+            padding: 3px 7px;
+            font-size: 0.68rem;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 991px) {
+            .notebook-grid {
+                grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+                max-width: none;
             }
         }
 
@@ -620,12 +964,12 @@
                     </div>
                 </div>
                 <div id="search-box">
-                    <input name="q" id="search-query" placeholder="Search..." autocapitalize="off" autocomplete="off"
+                    <input name="q" id="site-search-query" placeholder="Search..." autocapitalize="off" autocomplete="off"
                         autocorrect="off" spellcheck="false" type="search" class="form-control" aria-label="Search...">
                 </div>
             </section>
             <section class="section-search-results">
-                <div id="search-hits">
+                <div id="site-search-hits">
                 </div>
             </section>
         </div>
@@ -635,14 +979,14 @@
             <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
                 <div class="container-xl">
                     <div class="d-none d-lg-inline-flex">
-                        <a class="navbar-brand" href="https://zhihangliu.cn/">Zhihang Liu | 刘志航</a>
+                        <a class="navbar-brand" href="https://zhihangliu.cn/">Zhihang Liu</a>
                     </div>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content"
                         aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
                         <span><i class="fas fa-bars"></i></span>
                     </button>
                     <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-                        <a class="navbar-brand" href="https://zhihangliu.cn/">Zhihang Liu | 刘志航</a>
+                        <a class="navbar-brand" href="https://zhihangliu.cn/">Zhihang Liu</a>
                     </div>
                     <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
                         <ul class="navbar-nav d-md-inline-flex">
@@ -664,11 +1008,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="https://zhihangliu.cn/#Presentions"
-                                    data-target="#Presentions"><span>Presentions</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://zhihangliu.cn/#contact"
-                                    data-target="#contact"><span>Contact</span></a>
+                                    data-target="#Presentions"><span>Presentations</span></a>
                             </li>
                         </ul>
                     </div>
@@ -705,16 +1045,22 @@
                         alt="Zhihang Liu">
                     <div class="portrait-title">
                         <h2>Zhihang Liu</h2>
-                        <h3>Complexity | Complex Networks | Computational Social Science | Urban Computing</h3>
+                        <h2 class="name-zh">刘志航</h2>
+                        <div class="research-keywords">
+                            <span class="keyword-line">Complex Systems Dynamics</span>
+                            <span class="keyword-line">General Swarm Intelligence</span>
+                            <span class="keyword-line">Swarm Robotics</span>
+                            <span class="keyword-line">Physics-Informed Spatial Intelligence</span>
+                        </div>
                         <h3>
-                            <a href="https://english.pku.edu.cn/" target="_blank" rel="noopener">
-                                <span>
-                                    <a href="https://www.sysu.edu.cn/sysuen/">SYSU</a>
-                                    | <a href="https://english.pku.edu.cn/">PKU</a> |
-                                    <a href="http://english.igsnrr.cas.cn/">CAS</a> |
-                                    <a href='https://www.tum.de/'>TUM</a> |
-                                    <a href='https://www.cuhk.edu.hk/english/index.html'>CUHK</a> </span>
-                            </a>
+                            <span>
+                                <a href="https://www.sysu.edu.cn/sysuen/" target="_blank" rel="noopener">SYSU</a>
+                                | <a href="https://english.pku.edu.cn/" target="_blank" rel="noopener">PKU</a> |
+                                <a href="http://english.igsnrr.cas.cn/" target="_blank" rel="noopener">CAS</a> |
+                                <a href="https://www.tum.de/" target="_blank" rel="noopener">TUM</a> |
+                                <a href="https://www.cuhk.edu.hk/english/index.html" target="_blank"
+                                    rel="noopener">CUHK</a>
+                            </span>
                         </h3>
                     </div>
                     <ul class="network-icon" aria-hidden="true">
@@ -725,11 +1071,40 @@
                             </a>
                         </li>
                         <li>
+                            <a href="https://scholar.google.com/citations?hl=zh-CN&user=LEdncugAAAAJ&view_op=list_works&gmla=APjjwua0ACDS4j-ztjis59y1auHaCoTEhFamv02qdj3dPbmaYNECfigUe-vf8GR1zd50HTyUROF2W4BAKl5iEjYoUuooFF9Z1xDwwGz8miM"
+                                target="_blank" rel="noopener" aria-label="google scholar">
+                                <i class="ai ai-google-scholar big-icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCGI8oaRU48ajoTAA2BLihlg" target="_blank"
+                                rel="noopener" aria-label="youtube">
+                                <i class="fab fa-youtube big-icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#wechat-modal" aria-label="wechat">
+                                <i class="fab fa-weixin big-icon"></i>
+                            </a>
+                        </li>
+                        <li>
                             <a href="./assets/resume/CV_lzh.pdf" target="_blank" rel="noopener" aria-label="cv">
                                 <i class="ai ai-cv big-icon"></i>
                             </a>
                         </li>
                     </ul>
+                    <a class="sidebar-resume-link" href="./assets/resume/CV_lzh.pdf" target="_blank"
+                        rel="noopener">Download my <span class="resume-word">resumé</span>.</a>
+                    <div class="sidebar-contact">
+                        <div class="sidebar-contact-item">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <a href="mailto:zhihangliu@link.cuhk.edu.hk">zhihangliu@link.cuhk.edu.hk</a>
+                        </div>
+                        <div class="sidebar-contact-item">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <span>Fok Ying Tung Remote Sensing Science Building, The Chinese University of Hong Kong, Shatin, Hong Kong</span>
+                        </div>
+                    </div>
                 </div>
             </aside>
             <main class="site-main">
@@ -739,9 +1114,29 @@
                         <a href="#" data-page="news">News</a>
                         <a href="#" data-page="research">Research</a>
                         <a href="#" data-page="publications">Publications</a>
-                        <a href="#" data-page="open-source">Open Source</a>
+                        <a href="#" data-page="notebook">Notebook</a>
+                        <a href="#" data-page="open-source">Blog</a>
                     </nav>
                     <div class="page-actions">
+                        <a href="#" class="page-action-link page-search-action" aria-label="Search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                            <span class="shortcut-key">Ctrl K</span>
+                        </a>
+                        <div class="dropdown lang-dropdown">
+                            <a href="#" class="page-action-link lang-action" data-toggle="dropdown"
+                                aria-haspopup="true" aria-label="Language switch">
+                                <i class="fas fa-globe" aria-hidden="true"></i>
+                                <span class="lang-text">EN / 中</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a href="./" class="dropdown-item dropdown-item-active">
+                                    <span>English</span>
+                                </a>
+                                <a href="./zh/" class="dropdown-item">
+                                    <span>中文 (简体)</span>
+                                </a>
+                            </div>
+                        </div>
                         <div class="dropdown theme-dropdown">
                             <a href="#" class="page-action-link" data-toggle="dropdown"
                                 aria-haspopup="true" aria-label="Display preferences">
@@ -771,65 +1166,29 @@
                                     <div class="about-bio">
                         <h1>Biography</h1>
                         <div class="article-style">
-                            <p>I am currently a master's student at Peking University with a keen focus on Urban
-                                Computing, Computational Social Science, Complexity, and Complex Networks. From
-                                September 2022 to September 2023, I had the privilege to serve as a research assistant
-                                in the <a href="https://www.bgd.ed.tum.de/en/team.html" target="_blank"
-                                    rel="noopener">Big Geospatial Data Management Group</a> at the Technical University
-                                of Munich, Germany, under the guidance of <a
-                                    href="https://www.bgd.ed.tum.de/en/team/martin_werner.html" target="_blank"
-                                    rel="noopener">Prof. Dr. Martin Werner</a>. Presently, I am advancing my research at
-                                the <a href="http://www.iseis.cuhk.edu.hk/en/" target="_blank" rel="noopener">Institute
-                                    of Space and Earth Information Science</a> at The Chinese University of Hong Kong,
-                                mentored by <a href="http://www.meipokwan.org/" target="_blank" rel="noopener">Professor
-                                    Mei-Po Kwan</a>.</p>
-                            <p>Since 2020, I have been working as a part-time research assistant at the <a
-                                    href="http://english.igsnrr.cas.cn/" target="_blank" rel="noopener">Institute of
-                                    Geographic Sciences and Natural Resources Research, Chinese Academy of Sciences</a>,
-                                under the leadership of <a href="https://people.ucas.ac.cn/~liyurui?language=en"
-                                    target="_blank" rel="noopener">Professor Li Yurui</a>, delving into regional complex
-                                systems simulation and Multi-Agent Reinforcement Learning.</p>
-                            <p>My aspiration is to integrate cutting-edge artificial intelligence algorithms into my
-                                research, with a particular interest in deep learning and large language models. My
-                                academic vision revolves around constructing a research framework based on the
-                                principles of spatiotemporal dynamics, causality, and scale, aiming for a deeper
-                                understanding of complex system dynamics.</p>
-                            <p>You can reach me via email: <a
-                                    href="mailto:zhihangliu@link.cuhk.edu.hk">zhihangliu@link.cuhk.edu.hk</a></p>
-                            <p>
-                                <i class="fas fa-download pr-1 fa-fw"></i> Download my <a
-                                    href="./assets/resume/CV_lzh.pdf" target="_blank">resumé</a>.
-                            </p>
+                            <p>I am currently a PhD student at the <a href="http://www.iseis.cuhk.edu.hk/en/"
+                                    target="_blank" rel="noopener">Institute of Space and Earth Information Science
+                                    (ISEIS)</a>, The Chinese University of Hong Kong, supervised by <a
+                                    href="http://meipokwan.org/" target="_blank" rel="noopener">Prof. Mei-Po
+                                    Kwan</a>. I received my M.Sc.
+                                from Peking University and my Bachelor's degree from Sun Yat-sen University.</p>
+                            <p>My research interests
+                                include Complex Systems Dynamics, Physics-Informed Spatial Intelligence, and Swarm
+                                Intelligence. I also co-founded Evolution Tech Co., Ltd. to develop and build swarm
+                                robotic systems for validating and translating our research into real-world
+                                applications.</p>
                         </div>
                         <div class="row">
-                            <div class="col-md-5">
-                                <div class="section-subheading">Interests</div>
-                                <ul class="ul-interests mb-0">
-                                    <li>Complexity</li>
-                                    <li>Complex Networks</li>
-                                    <li>Computational Social Science</li>
-                                    <li>Urban Computing</li>
+                            <div class="col-12">
+                                <div class="section-subheading education-heading">Education</div>
+                                <ul class="education-list">
+                                    <li>MSc, Peking University, 2021-2024</li>
+                                    <li>Bachelor, Sun Yat-Sen University, 2017-2021</li>
                                 </ul>
-                            </div>
-                            <div class="col-md-7">
-                                <div class="section-subheading">Education</div>
-                                <ul class="ul-edu fa-ul mb-0">
-                                    <li>
-                                        <i class="fa-li fas fa-graduation-cap"></i>
-                                        <div class="description">
-                                            <p class="course">MSc in Urban Planning (Research in Urban Computing), 2024
-                                            </p>
-                                            <p class="institution">Peking University</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <i class="fa-li fas fa-graduation-cap"></i>
-                                        <div class="description">
-                                            <p class="course">BA in Public Administration (Research in Computational
-                                                Social Science), 2021</p>
-                                            <p class="institution">Sun Yat-Sen University</p>
-                                        </div>
-                                    </li>
+                                <ul class="abroad-list mb-0">
+                                    <li>Guest Researcher, Department of Aerospace and Geodesy, Technical University of Munich, 2022-2023.</li>
+                                    <li>UK Study Abroad Programme (Full Scholarship), LSE, Cambridge, Oxford, UoM, 2019.</li>
+                                    <li>China Scholarship Council (CSC) Excellent Undergraduate International Exchange Program, The University of Seoul, 2019-2020.</li>
                                 </ul>
                             </div>
                         </div>
@@ -852,7 +1211,7 @@
                 <div class="row">
                     <div
                         class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-                        <h1 class="mb-0">Experience</h1>
+                        <h1 class="mb-0">Work Experience</h1>
                     </div>
                     <div class="col-12 col-lg-8">
                         <div class="row experience">
@@ -1015,7 +1374,7 @@
                                                             <a href="http://english.igsnrr.cas.cn/">Institute of
                                                                 Geographic Sciences and Natural Resources Research </a>
                                                         </div>
-                                                        <div class="text-muted exp-meta">2020.9- present
+                                                        <div class="text-muted exp-meta">2020.9-2024
                                                             <span class="middot-divider"></span>
                                                             <!-- <span>California</span></div> -->
                                                         </div>
@@ -1041,37 +1400,83 @@
                             </div>
                         </div>
         </section>
-        <section id="contact" class="home-section wg-contact">
-            <div class="home-section-bg"></div>
+                    </div>
+                    <div class="page-section" data-page="notebook" id="notebook">
+                        <section id="notebooks" class="home-section wg-pages">
+            <div class="home-section-bg">
+            </div>
             <div class="container">
                 <div class="row">
-                    <div
-                        class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-                        <h1 class="mb-0">Contact</h1>
-                    </div>
-                    <div class="col-12 col-lg-8">
-                        <grammarly-extension data-grammarly-shadow-root="true" class="dnXmp"
-                            style="position: absolute; top: 0px; left: 0px; pointer-events: none;">
-                        </grammarly-extension>
-                        <grammarly-extension data-grammarly-shadow-root="true" class="dnXmp"
-                            style="position: absolute; top: 0px; left: 0px; pointer-events: none;">
-                        </grammarly-extension>
-                        <ul class="fa-ul">
-                            <li><i class="fa-li fas fa-envelope fa-2x" aria-hidden="true"></i>
-                                <span id="person-email"><a
-                                        href="mailto:zhihangliu@link.cuhk.edu.hk">zhihangliu@link.cuhk.edu.hk</a></span>
-                            </li>
-                            <li><i class="fa-li fas fa-phone fa-2x" aria-hidden="true"></i>
-                                <span id="person-telephone"><a href="tel:888%20888%2088%2088">825-53959481</a></span>
-                            </li>
-                            <li><i class="fa-li fas fa-map-marker fa-2x" aria-hidden="true"></i>
-                                <span id="person-address">Address: Fok Ying Tung Remote Sensing Science Building, The
-                                    Chinese University of Hong Kong, Shatin, Hong Kong</span>
-                            </li>
-                            <!-- <li><i class="fa-li fas fa-compass fa-2x" aria-hidden="true"></i>
-                                <span>Enter Building 1 and take the stairs to Office 200 on Floor 2</span>
-                            </li> -->
-                        </ul>
+                    <div class="col-12">
+                        <div class="notebook-grid">
+                            <article class="notebook-card">
+                                <a class="notebook-cover"
+                                    href="https://zhihangliu.cn/Nonequilibrium-Field-Theories-and-Stochastic-Dynamics/"
+                                    target="_blank" rel="noopener">
+                                    <img src="./assets/images/Nonequilibrium-Field-Theories-and-Stochastic-Dynamics.png"
+                                        alt="Nonequilibrium Field Theories and Stochastic Dynamics cover"
+                                        loading="lazy">
+                                </a>
+                                <div class="notebook-meta">
+                                    <h2 class="notebook-title">Nonequilibrium Field Theories and Stochastic
+                                        Dynamics</h2>
+                                    <div class="notebook-links">
+                                        <a class="btn btn-outline-primary"
+                                            href="https://zhihangliu.cn/Nonequilibrium-Field-Theories-and-Stochastic-Dynamics/"
+                                            target="_blank" rel="noopener">Notebook</a>
+                                        <a class="btn btn-outline-primary"
+                                            href="https://github.com/Liu-Zhihang/Nonequilibrium-Field-Theories-and-Stochastic-Dynamics"
+                                            target="_blank" rel="noopener">GitHub</a>
+                                        <a class="btn btn-outline-primary"
+                                            href="https://github.com/Liu-Zhihang/Nonequilibrium-Field-Theories-and-Stochastic-Dynamics/tree/main/code"
+                                            target="_blank" rel="noopener">Code</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="notebook-card">
+                                <a class="notebook-cover"
+                                    href="https://zhihangliu.cn/Self-Organization-and-Pattern-Formation/"
+                                    target="_blank" rel="noopener">
+                                    <img src="./assets/images/Self-Organization-and-Pattern-Formation.png"
+                                        alt="Self-Organization and Pattern Formation cover" loading="lazy">
+                                </a>
+                                <div class="notebook-meta">
+                                    <h2 class="notebook-title">Self-Organization and Pattern Formation</h2>
+                                    <div class="notebook-links">
+                                        <a class="btn btn-outline-primary"
+                                            href="https://zhihangliu.cn/Self-Organization-and-Pattern-Formation/"
+                                            target="_blank" rel="noopener">Notebook</a>
+                                        <a class="btn btn-outline-primary"
+                                            href="https://github.com/Liu-Zhihang/Self-Organization-and-Pattern-Formation"
+                                            target="_blank" rel="noopener">GitHub</a>
+                                        <a class="btn btn-outline-primary"
+                                            href="https://github.com/Liu-Zhihang/Self-Organization-and-Pattern-Formation/tree/main/code"
+                                            target="_blank" rel="noopener">Code</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="notebook-card">
+                                <a class="notebook-cover" href="https://zhihangliu.cn/Renormalization-Group/"
+                                    target="_blank" rel="noopener">
+                                    <img src="./assets/images/Renormalization-Group.png"
+                                        alt="Renormalization Group cover" loading="lazy">
+                                </a>
+                                <div class="notebook-meta">
+                                    <h2 class="notebook-title">Renormalization Group</h2>
+                                    <div class="notebook-links">
+                                        <a class="btn btn-outline-primary"
+                                            href="https://zhihangliu.cn/Renormalization-Group/" target="_blank"
+                                            rel="noopener">Notebook</a>
+                                        <a class="btn btn-outline-primary"
+                                            href="https://github.com/Liu-Zhihang/Renormalization-Group"
+                                            target="_blank" rel="noopener">GitHub</a>
+                                        <a class="btn btn-outline-primary"
+                                            href="https://github.com/Liu-Zhihang/Renormalization-Group/tree/main/code"
+                                            target="_blank" rel="noopener">Code</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1081,13 +1486,9 @@
                         <section id="posts" class="home-section wg-pages">
             <div class="home-section-bg">
             </div>
-            <div class="container">
-                <div class="row">
-                    <div
-                        class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-                        <h1 class="mb-0">Open Source</h1>
-                    </div>
-                    <div class="col-12 col-lg-8">
+            <div class="container text-left">
+                <div class="row justify-content-start">
+                    <div class="col-12">
                         <div class="media stream-item view-compact">
                             <div class="media-body">
                                 <div class="section-subheading article-title mb-0 mt-0"><a
@@ -1107,7 +1508,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="ml-3"><a href="https://zhihangliu.cn/posts/top_down_model/"><img
+                            <div class="ml-3 flex-shrink-0"><a href="https://zhihangliu.cn/posts/top_down_model/"><img
                                         src="./assets/images/封面图.jpg" height="165" width="250"
                                         alt="Top-down Dynamics Model: The Master Equation" loading="lazy"></a></div>
                         </div>
@@ -1133,9 +1534,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="ml-3"><a href="https://zhihangliu.cn/posts/percolation/"><img
+                            <div class="ml-3 flex-shrink-0"><a href="https://zhihangliu.cn/posts/percolation/"><img
                                         src="./assets/images/percolation_封面.jpg" height="165" width="250"
-                                        alt="Top-down Dynamics Model: The Master Equation" loading="lazy"></a></div>
+                                        alt="Percolation Model on Virus Propagation Networks" loading="lazy"></a></div>
                         </div>
                         <div class="media stream-item view-compact">
                             <div class="media-body">
@@ -1156,9 +1557,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="ml-3"><a href="https://zhihangliu.cn/posts/mean_field/"><img
+                            <div class="ml-3 flex-shrink-0"><a href="https://zhihangliu.cn/posts/mean_field/"><img
                                         src="./assets/images/mf_封面图.jpg" height="165" width="250"
-                                        alt="Top-down Dynamics Model: The Master Equation" loading="lazy"></a></div>
+                                        alt="Mean Field Model for Homogeneous Networks" loading="lazy"></a></div>
                         </div>
                     </div>
                 </div>
@@ -1184,6 +1585,8 @@
                                             class="btn btn-primary btn-lg active">All</a>
                                         <a href="https://zhihangliu.cn/#" data-filter=".js-id-Deep-Learning"
                                             class="btn btn-primary btn-lg">Mobility</a>
+                                        <a href="https://zhihangliu.cn/#" data-filter=".js-id-Swarm"
+                                            class="btn btn-primary btn-lg">Swarm</a>
                                         <a href="https://zhihangliu.cn/#" data-filter=".js-id-Demo"
                                             class="btn btn-primary btn-lg">Other</a>
                                     </div>
@@ -1192,45 +1595,20 @@
                         </div>
                         <div class="isotope projects-container row js-layout-row"
                             style="position: relative; height: 0px;">
-                            <div class="col-12 isotope-item js-id-Deep-Learning"
+                            <div class="col-12 isotope-item js-id-Swarm"
                                 style="position: absolute; left: 0px; top: 0px;">
                                 <div class="col-lg-12 mb-5 view-showcase">
                                     <div class="row align-items-center">
                                         <div class="col-12 col-md-6">
                                             <div class="section-subheading article-title mb-0 mt-0"><a
-                                                    href="./projects/sz_trips/index.html">The taxi track in Shenzhen,
-                                                    China.</a>
+                                                    href="./projects/Swarm_robot/index.html">Quadruped Robot Hardware and Swarm Intelligence: From Single-Agent Motion Control to Multi-Agent Coordination</a>
                                             </div>
-                                            <div class="article-style">We visualized the taxi tracks and buildings in
-                                                shenzhen using the deck.gl.
-                                            </div>
+                                            <div class="article-style">Evolution Tech develops open-source, cost-effective quadruped robots with dynamic motion control, hardware-software integration, and vision-based perception for swarm applications.</div>
                                         </div>
                                         <div class="col-12 col-md-6 order-first"><a
-                                                href="./projects/sz_trips/index.html"><img
-                                                    src="./assets/images/track.png" height="304" width="540"
-                                                    alt="Example Project" loading="lazy"></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="isotope projects-container row js-layout-row"
-                            style="position: relative; height: 0px;">
-                            <div class="col-12 isotope-item js-id-Deep-Learning"
-                                style="position: absolute; left: 0px; top: 0px;">
-                                <div class="col-lg-12 mb-5 view-showcase">
-                                    <div class="row align-items-center">
-                                        <div class="col-12 col-md-6">
-                                            <div class="section-subheading article-title mb-0 mt-0"><a
-                                                    href="./projects/taxi_pm25/index.html">The relationship between air
-                                                    pollution distribution(Pm2.5) and taxi track in Jinan, China.</a>
-                                            </div>
-                                            <div class="article-style">We visualized the taxi tracks and air pollution
-                                                distribution in Jinan</div>
-                                        </div>
-                                        <div class="col-12 col-md-6 order-first"><a
-                                                href="./projects/taxi_pm25/index.html"><img
-                                                    src="./assets/images/taxi_pm.png" height="304" width="540"
-                                                    alt="Example Project" loading="lazy"></a></div>
+                                                href="./projects/Swarm_robot/index.html"><img
+                                                    src="./assets/images/Q1_2.jpg" height="304"
+                                                    width="540" alt="Swarm Robot Q1" loading="lazy"></a></div>
                                     </div>
                                 </div>
                             </div>
@@ -1280,6 +1658,51 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="isotope projects-container row js-layout-row"
+                            style="position: relative; height: 0px;">
+                            <div class="col-12 isotope-item js-id-Deep-Learning"
+                                style="position: absolute; left: 0px; top: 0px;">
+                                <div class="col-lg-12 mb-5 view-showcase">
+                                    <div class="row align-items-center">
+                                        <div class="col-12 col-md-6">
+                                            <div class="section-subheading article-title mb-0 mt-0"><a
+                                                    href="./projects/sz_trips/index.html">The taxi track in Shenzhen,
+                                                    China.</a>
+                                            </div>
+                                            <div class="article-style">We visualized the taxi tracks and buildings in
+                                                shenzhen using the deck.gl.
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 order-first"><a
+                                                href="./projects/sz_trips/index.html"><img
+                                                    src="./assets/images/track.png" height="304" width="540"
+                                                    alt="Example Project" loading="lazy"></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="isotope projects-container row js-layout-row"
+                            style="position: relative; height: 0px;">
+                            <div class="col-12 isotope-item js-id-Deep-Learning"
+                                style="position: absolute; left: 0px; top: 0px;">
+                                <div class="col-lg-12 mb-5 view-showcase">
+                                    <div class="row align-items-center">
+                                        <div class="col-12 col-md-6">
+                                            <div class="section-subheading article-title mb-0 mt-0"><a
+                                                    href="./projects/taxi_pm25/index.html">The relationship between air
+                                                    pollution distribution(Pm2.5) and taxi track in Jinan, China.</a>
+                                            </div>
+                                            <div class="article-style">We visualized the taxi tracks and air pollution
+                                                distribution in Jinan</div>
+                                        </div>
+                                        <div class="col-12 col-md-6 order-first"><a
+                                                href="./projects/taxi_pm25/index.html"><img
+                                                    src="./assets/images/taxi_pm.png" height="304" width="540"
+                                                    alt="Example Project" loading="lazy"></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1309,123 +1732,62 @@
                         <h1 class="mb-0">Publications</h1>
                     </div>
                     <div class="col-12 col-lg-8">
-                        <!-- Peer Reviewed Articles Section -->
-                        <h2 class="section-subheading">Peer Reviewed Articles</h2>
-                        <!-- Article 1 -->
-                        <div class="pub-list-item view-citation" style="margin-bottom:1rem">
-                            <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-                            <span class="article-metadata li-cite-author"><span class="author-highlighted">Liu, Z.,</span> Fang, C., Li, H., Wu, J., Zhou, L., &
-                                Werner, M. (2023).</span>
-                            <a href="https://doi.org/10.1016/j.scs.2023.105096">Efficiency and equality of the
-                                multimodal travel between public transit and bike-sharing accounting for multiscale.
-                                Sustainable Cities and Society, 105096.</a>
-                            <p>
-                                <a class="btn btn-outline-primary btn-page-header btn-sm"
-                                    href="https://github.com/Liu-Zhihang/bike-sharing" target="_blank"
-                                    rel="noopener">Code</a>
-                                <a class="btn btn-outline-primary btn-page-header btn-sm"
-                                    href="https://zhihangliu.cn/projects/Sharingbike/Morning_bike_sharing.html"
-                                    target="_blank" rel="noopener">Project</a>
-                            </p>
+                        <div class="pub-list-item view-citation" style="margin-bottom:1.5rem; display:flex; align-items:flex-start; gap:1rem;">
+                            <a href="https://zhihangliu.cn/projects/Sharingbike/Morning_bike_sharing.html" target="_blank" rel="noopener" style="flex-shrink:0;"><img src="./assets/images/sharing_bike_morning.png" alt="Project: Multimodal travel OD" style="width:120px;height:120px;object-fit:cover;border-radius:6px;" loading="lazy"></a>
+                            <div>
+                                <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+                                <span class="article-metadata li-cite-author"><span class="author-highlighted">Liu, Z.,</span> Fang, C., Li, H., Wu, J., Zhou, L., & Werner, M. (2024).</span>
+                                <a href="https://www.sciencedirect.com/science/article/abs/pii/S2210670723007060" target="_blank" rel="noopener">Efficiency and equality of the multimodal travel between public transit and bike-sharing accounting for multiscale.</a> <em>Sustainable Cities and Society</em> 101, 105096.
+                                <p class="mb-0 mt-1">
+                                    <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/Liu-Zhihang/bike-sharing" target="_blank" rel="noopener">Code</a>
+                                    <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://zhihangliu.cn/projects/Sharingbike/Morning_bike_sharing.html" target="_blank" rel="noopener">Project page</a>
+                                </p>
+                            </div>
                         </div>
-                        <!-- Article 2 -->
-                        <div class="pub-list-item view-citation" style="margin-bottom:1rem">
-                            <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-                            <span class="article-metadata li-cite-author">Yao, Y., Lei, S., Guo, Z., Li, Y., Ren, S.,
-                                <span class="author-highlighted">Liu, Z.,</span> ... & Luo, P. (2023).</span>
-                            <a href="https://doi.org/10.1080/13658816.2023.2190371">Fast optimization for large scale
-                                logistics in complex urban systems using the hybrid sparrow search algorithm.
-                                International Journal of Geographical Information Science, 1-29.</a>
+                        <div class="pub-list-item view-citation" style="margin-bottom:1.5rem; display:flex; align-items:flex-start; gap:1rem;">
+                            <a href="https://www.nature.com/articles/s41599-024-03592-3" target="_blank" rel="noopener" style="flex-shrink:0;"><img src="./projects/Covid_fatigue/assets/first_page.png" alt="Paper: Shifting sentiments" style="width:120px;height:120px;object-fit:cover;border-radius:6px;" loading="lazy"></a>
+                            <div>
+                                <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+                                <span class="article-metadata li-cite-author"><span class="author-highlighted">Liu, Z.,</span> Wu, J., Wu, C.Y.H., & Xia, X. (2024).</span>
+                                <a href="https://www.nature.com/articles/s41599-024-03592-3" target="_blank" rel="noopener">Shifting sentiments: analyzing public reaction to COVID-19 containment policies in Wuhan and Shanghai through Weibo data.</a> <em>Humanities and Social Sciences Communications</em> 11(1), 1–13.
+                                <p class="mb-0 mt-1">
+                                    <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/Liu-Zhihang/weibosemantic" target="_blank" rel="noopener">Code</a>
+                                    <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://zhihangliu.cn/projects/Covid_fatigue/index.html" target="_blank" rel="noopener">Project page</a>
+                                </p>
+                            </div>
                         </div>
-
-                        <!-- Article 3 -->
-                        <div class="pub-list-item view-citation" style="margin-bottom:1rem">
-                            <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-                            <span class="article-metadata li-cite-author">Ling, C., <span class="author-highlighted">Liu, Z.</span> (2023).</span>
-                            <a href="https://doi.org/10.19830/j.upi.2023.082">High-Density Cities and Compact
-                                Development: Sino-Foreign Comparisons and Implications. Urban Planning International,
-                                1-13.</a>
+                        <div class="pub-list-item view-citation" style="margin-bottom:1.5rem; display:flex; align-items:flex-start; gap:1rem;">
+                            <a href="https://dl.acm.org/doi/abs/10.1145/3678717.3700826" target="_blank" rel="noopener" style="flex-shrink:0;"><img src="./assets/images/ev_charging_2024.png" alt="Paper: Optimal Location of EV Charging Stations" style="width:120px;height:120px;object-fit:cover;border-radius:6px;" loading="lazy"></a>
+                            <div>
+                                <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+                                <span class="article-metadata li-cite-author"><span class="author-highlighted">Liu, Z.,</span> Kwan, M.P., & Wu, J. (2024).</span>
+                                <a href="https://dl.acm.org/doi/abs/10.1145/3678717.3700826" target="_blank" rel="noopener">Optimal Location of Electric Vehicle Charging Stations Using Geospatial Big Data.</a> <em>Proceedings of the 32nd ACM International Conference on Advances in Geographic Information Systems (ACM SIGSPATIAL)</em>.
+                            </div>
                         </div>
-
-                        <!-- Working Papers Section -->
-                        <h2 class="section-subheading">Working Papers</h2>
-                        <!-- Paper 1 -->
-                        <div class="pub-list-item view-citation" style="margin-bottom:1rem">
-                            <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-                            <span class="article-metadata li-cite-author">From positive support to negative reaction:
-                                The evolution of China’s containment policy and its impact on public sentiment during
-                                the COVID-19 pandemic (First Author, Submit to Humanities and Social Sciences
-                                Communications, Revision)</span>
-                            <p>
-                                <a class="btn btn-outline-primary btn-page-header btn-sm"
-                                    href="https://github.com/Liu-Zhihang/weibosemantic" target="_blank"
-                                    rel="noopener">Code</a>
-                            </p>
+                        <div class="pub-list-item view-citation" style="margin-bottom:1.5rem; display:flex; align-items:flex-start; gap:1rem;">
+                            <a href="https://isprs-archives.copernicus.org/articles/XLVIII-1-W2-2023/361/2023/" target="_blank" rel="noopener" style="flex-shrink:0;"><img src="./assets/images/isprs_2023.png" alt="Paper: Spatio-Temporal Analysis of Urban Economic Resilience" style="width:120px;height:120px;object-fit:cover;border-radius:6px;" loading="lazy"></a>
+                            <div>
+                                <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+                                <span class="article-metadata li-cite-author"><span class="author-highlighted">Liu, Z.,</span> Wu, J., Li, H., & Werner, M. (2023).</span>
+                                <a href="https://isprs-archives.copernicus.org/articles/XLVIII-1-W2-2023/361/2023/" target="_blank" rel="noopener">Spatio-Temporal Analysis of Urban Economic Resilience during COVID-19 with Multilayer Complex Networks.</a> <em>The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>.
+                            </div>
                         </div>
-                        <!-- Paper 2 -->
-                        <div class="pub-list-item view-citation" style="margin-bottom:1rem">
-                            <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-                            <span class="article-metadata li-cite-author">Spatio-temporal analysis of urban economic
-                                resilience during COVID-19 with multilayer complex networks (First & Corresponding
-                                Author, accepted by The ISPRS Geospatial Week 2023 oral talk, Travel Grants by the ISPRS
-                                Foundation, Submissions in progress)</span>
-                            <p>
-                                <a class="btn btn-outline-primary btn-page-header btn-sm"
-                                    href="https://github.com/Liu-Zhihang/Complex_network_resilience" target="_blank"
-                                    rel="noopener">Code</a>
-                                <a class="btn btn-outline-primary btn-page-header btn-sm"
-                                    href="https://www.bgd.ed.tum.de/pdf/2023_multilayer_Zhihang.pdf" target="_blank"
-                                    rel="noopener">PDF</a>
-                            </p>
+                        <div class="pub-list-item view-citation" style="margin-bottom:1.5rem; display:flex; align-items:flex-start; gap:1rem;">
+                            <a href="https://doi.org/10.1080/13658816.2023.2190371" target="_blank" rel="noopener" style="flex-shrink:0;"><img src="./assets/images/ijgis_2023.png" alt="Paper: Fast optimization for large scale logistics" style="width:120px;height:120px;object-fit:cover;border-radius:6px;" loading="lazy"></a>
+                            <div>
+                                <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+                                <span class="article-metadata li-cite-author">Yao, Y., Lei, S., Guo, Z., Li, Y., Ren, S., <span class="author-highlighted">Liu, Z.,</span> Guan, Q., & Luo, P. (2023).</span>
+                                <a href="https://doi.org/10.1080/13658816.2023.2190371" target="_blank" rel="noopener">Fast optimization for large scale logistics in complex urban systems using the hybrid sparrow search algorithm.</a> <em>International Journal of Geographical Information Science</em> 37(6), 1420–1448.
+                            </div>
                         </div>
-
-                        <!-- Paper 3 -->
-                        <div class="pub-list-item view-citation" style="margin-bottom:1rem">
-                            <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-                            <span class="article-metadata li-cite-author">Exploring Patterns of Rural Development
-                                through Collective Behavior-Based AI Simulation (On going)</span>
-                            <p>
-                                <a class="btn btn-outline-primary btn-page-header btn-sm" href="#" target="_blank"
-                                    rel="noopener">More Info</a>
-                            </p>
+                        <div class="pub-list-item view-citation" style="margin-bottom:1.5rem; display:flex; align-items:flex-start; gap:1rem;">
+                            <a href="https://www.sciencedirect.com/science/article/pii/S0959652624003196" target="_blank" rel="noopener" style="flex-shrink:0;"><img src="./assets/images/clean_2023.png" alt="Paper: Journal of Cleaner Production" style="width:120px;height:120px;object-fit:cover;border-radius:6px;" loading="lazy"></a>
+                            <div>
+                                <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+                                <span class="article-metadata li-cite-author">Zhou, L., Zhou, Y., de Vries, W.T., <span class="author-highlighted">Liu, Z.,</span> & Sun, H. (2024).</span>
+                                <a href="https://www.sciencedirect.com/science/article/pii/S0959652624003196" target="_blank" rel="noopener">Collective action dilemmas of sustainable natural resource management: A case study on land marketization in rural China.</a> <em>Journal of Cleaner Production</em> 439, 140872.
+                            </div>
                         </div>
-
-                        <!-- Paper 4 -->
-                        <div class="pub-list-item view-citation" style="margin-bottom:1rem">
-                            <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-                            <span class="article-metadata li-cite-author">Holistic urban sensing based on remote sensing
-                                and street view images using Vision Transformers (On going)</span>
-                            <p>
-                                <a class="btn btn-outline-primary btn-page-header btn-sm"
-                                    href="https://github.com/Liu-Zhihang/Complex_regional_systems" target="_blank"
-                                    rel="noopener">Code</a>
-                            </p>
-                        </div>
-
-                        <!-- Paper 5 -->
-                        <div class="pub-list-item view-citation" style="margin-bottom:1rem">
-                            <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-                            <span class="article-metadata li-cite-author">How do the spatial mobility and economic model
-                                shape shop sign landscape? Based on street view images and deep learning (On
-                                going)</span>
-                            <p>
-                                <a class="btn btn-outline-primary btn-page-header btn-sm" href="#" target="_blank"
-                                    rel="noopener">More Info</a>
-                            </p>
-                        </div>
-
-                        <!-- Paper 6 -->
-                        <div class="pub-list-item view-citation" style="margin-bottom:1rem">
-                            <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-                            <span class="article-metadata li-cite-author">Sensing Cities with large language model (On
-                                going)</span>
-                            <p>
-                                <a class="btn btn-outline-primary btn-page-header btn-sm" href="#" target="_blank"
-                                    rel="noopener">More Info</a>
-                            </p>
-                        </div>
-
-
                     </div>
                 </div>
             </div>
@@ -1441,31 +1803,42 @@
                         <h1 class="mb-0">News</h1>
                     </div>
                     <div class="col-12 col-lg-8">
-                        <div class="media stream-item view-compact">
+                        <!-- GISCup 2024 二等奖 -->
+                        <div class="media stream-item view-compact mb-4">
                             <div class="media-body">
-                                <div class="section-subheading article-title mb-0 mt-0"><a
-                                        href="./presentations/ISPRS.html">The ISPRS
-                                        Geospatial Week 2023</a></div><a href="./presentations/ISPRS.html"
-                                    class="summary-link">
-                                    <div class="article-style">Oral Presentation: Spatio-Temporal Analysis of Urban
-                                        Economic Resilience During COVID-19 with Multilayer Complex Networks.
-                                    </div>
-                                </a>
-                                <div class="stream-meta article-metadata">
-                                    <div><span> 06/Sept/2023: 8:30 am - 10:00 am , Cairo, Egypt</span>
-                                        <span class="middot-divider"></span>
-                                        <span>Zhihang Liu</span>
-                                    </div>
+                                <div class="section-subheading article-title mb-0 mt-0">Second Prize, <a href="https://sigspatial2024.sigspatial.org/giscup/index.html" target="_blank" rel="noopener">ACM SIGSPATIAL GIS Cup 2024</a></div>
+                                <div class="article-style mt-2">
+                                    I won the <strong>Second Prize</strong> in the <a href="https://sigspatial2024.sigspatial.org/giscup/index.html" target="_blank" rel="noopener">ACM SIGSPATIAL GIS Cup 2024</a> (see <a href="https://sigspatial2024.sigspatial.org/giscup/submit.html" target="_blank" rel="noopener">contest &amp; submission</a>). The paper <em>Optimal Location of Electric Vehicle Charging Stations Using Geospatial Big Data</em> was presented at the 32nd ACM SIGSPATIAL (Oct 29 – Nov 1, 2024, Atlanta, GA, USA).
                                 </div>
-                                <div class="btn-links"><a class="btn btn-outline-primary btn-page-header btn-sm"
-                                        href="https://github.com/Liu-Zhihang/Complex_network_resilience">Project</a>
-                                    <a class="btn btn-outline-primary btn-page-header btn-sm"
-                                        href="./presentations/slides/ISPRS.pptx" target="_blank">Slides</a>
+                                <div class="stream-meta article-metadata mt-2">
+                                    <div><span>Oct 29 – Nov 1, 2024, Atlanta, GA, USA</span><span class="middot-divider"></span><span>Zhihang Liu</span></div>
+                                </div>
+                                <div class="btn-links mt-2">
+                                    <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://dl.acm.org/doi/abs/10.1145/3678717.3700826" target="_blank" rel="noopener">Paper (ACM DL)</a>
+                                </div>
+                                <div class="mt-3">
+                                    <img src="./presentations/images/giscup2024_certificate.jpg" alt="GISCup 2024 Award Certificate" style="max-width:100%;max-height:320px;width:auto;border-radius:6px;display:block;" loading="lazy">
                                 </div>
                             </div>
-                            <div class="ml-3"><a href="./presentations/ISPRS.html"><img
-                                        src="./presentations/images/figure.png" height="150" width="110"
-                                        alt="Example Talk" loading="lazy"></a></div>
+                        </div>
+                        <div class="media stream-item view-compact">
+                            <div class="media-body">
+                                <div class="section-subheading article-title mb-0 mt-0">Awarded ISPRS Foundation's Travel Grant — ISPRS Geospatial Week 2023</div>
+                                <div class="article-style mt-2">
+                                    I was awarded the <a href="https://www.isprs.org/foundation/uploads/news/TIF_TRAVEL_GRANT_AWARDEES_FOR_GSW2023-revised.pdf" target="_blank" rel="noopener">ISPRS Foundation Travel Grant</a> and attended the ISPRS Geospatial Week 2023 (2–7 September, Cairo, Egypt). I gave an oral presentation: <em>Spatio-Temporal Analysis of Urban Economic Resilience During COVID-19 with Multilayer Complex Networks.</em>
+                                </div>
+                                <div class="stream-meta article-metadata mt-2">
+                                    <div><span>06/Sept/2023, 8:30–10:00 am, Cairo, Egypt</span><span class="middot-divider"></span><span>Zhihang Liu</span></div>
+                                </div>
+                                <div class="btn-links mt-2">
+                                    <a class="btn btn-outline-primary btn-page-header btn-sm" href="./presentations/slides/ISPRS.pptx" target="_blank" rel="noopener">Slides (PPT)</a>
+                                </div>
+                                <div class="mt-3 d-flex flex-wrap gap-2">
+                                    <img src="./presentations/images/isprs_1.jpg" alt="ISPRS GSW 2023" style="max-height:180px;width:auto;border-radius:6px;" loading="lazy">
+                                    <img src="./presentations/images/isprs_2.jpg" alt="ISPRS GSW 2023" style="max-height:180px;width:auto;border-radius:6px;" loading="lazy">
+                                    <img src="./presentations/images/isprs_3.jpg" alt="ISPRS GSW 2023" style="max-height:180px;width:auto;border-radius:6px;" loading="lazy">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1495,7 +1868,7 @@
         <div class="container">
             <footer class="site-footer">
                 <p class="powered-by copyright-license-text">
-                    © 2023 Me. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0"
+                    Copyright 2026 Zhihang Liu. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0"
                         rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
                 </p>
                 <p class="powered-by footer-license-icons">
@@ -1558,6 +1931,22 @@
             </div>
         </div>
     </div>
+    <div id="wechat-modal" class="modal fade" role="dialog" aria-labelledby="wechat-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="wechat-modal-title">Follow on WeChat</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body wechat-modal-body">
+                    <img src="./assets/images/wechat-qr.jpg" alt="WeChat QR code" class="wechat-qr-img" loading="lazy">
+                    <p class="wechat-copy">Open WeChat and scan this QR code to follow my official account,<br><strong>Interesting Methods PhD · Frontiers of Complexity</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./assets/js/wowchemy-publication.ee00aa4e09ee62617fe2dc15bfcb3f7b.js" type="module"></script>
     <script src="./assets/js/vendor/three.min.js"></script>
     <script src="./assets/js/vendor/three-spritetext.min.js"></script>
@@ -1594,6 +1983,15 @@
                 }
             };
 
+            window.setActivePage = function (page, persist) {
+                setActive(page, !!persist);
+            };
+
+            window.getActivePage = function () {
+                var activeLink = document.querySelector('.page-tabs a.is-active[data-page]');
+                return activeLink ? activeLink.getAttribute('data-page') : 'about';
+            };
+
             var initialPage = 'about';
             try {
                 initialPage = localStorage.getItem('activePage') || 'about';
@@ -1622,6 +2020,331 @@
             setTimeout(function () {
                 window.scrollTo(0, 0);
             }, 0);
+        })();
+    </script>
+    <script>
+        (function () {
+            var searchModal = document.getElementById('search');
+            var searchInput = document.getElementById('site-search-query');
+            var searchHits = document.getElementById('site-search-hits');
+            if (!searchModal || !searchInput || !searchHits) {
+                return;
+            }
+
+            var pageNameMap = {
+                'about': 'About',
+                'news': 'News',
+                'research': 'Research',
+                'publications': 'Publications',
+                'notebook': 'Notebook',
+                'open-source': 'Blog'
+            };
+
+            var normalize = function (text) {
+                return (text || '').replace(/\s+/g, ' ').trim();
+            };
+
+            var escapeHtml = function (text) {
+                return (text || '')
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+            };
+
+            var localDocs = [];
+            var docId = 0;
+            var pushLocalDoc = function (page, title, text) {
+                var cleanText = normalize(text);
+                if (!cleanText || cleanText.length < 18) {
+                    return;
+                }
+                var cleanTitle = normalize(title) || (pageNameMap[page] || page);
+                localDocs.push({
+                    id: ++docId,
+                    page: page,
+                    pageLabel: pageNameMap[page] || page,
+                    title: cleanTitle,
+                    text: cleanText,
+                    titleLower: cleanTitle.toLowerCase(),
+                    textLower: cleanText.toLowerCase()
+                });
+            };
+
+            var localBlockSelector = '.about-bio, .notebook-card, .media.stream-item, .pub-list-item, .view-showcase, .card';
+            document.querySelectorAll('.page-section[data-page]').forEach(function (section) {
+                var page = section.getAttribute('data-page') || 'about';
+                var blocks = section.querySelectorAll(localBlockSelector);
+                if (!blocks.length) {
+                    pushLocalDoc(page, pageNameMap[page] || page, section.textContent);
+                    return;
+                }
+                blocks.forEach(function (block) {
+                    var titleEl = block.querySelector('h1, h2, h3, .article-title a, .article-title, .section-subheading, .exp-title, .notebook-title');
+                    var title = titleEl ? titleEl.textContent : (pageNameMap[page] || page);
+                    pushLocalDoc(page, title, block.textContent);
+                });
+            });
+
+            var localSearch = function (query) {
+                var lowerQ = query.toLowerCase();
+                var terms = lowerQ.split(/\s+/).filter(Boolean);
+                var ranked = [];
+                localDocs.forEach(function (doc) {
+                    var score = 0;
+                    if (doc.titleLower.indexOf(lowerQ) !== -1) {
+                        score += 120;
+                    }
+                    if (doc.textLower.indexOf(lowerQ) !== -1) {
+                        score += 30;
+                    }
+                    terms.forEach(function (term) {
+                        if (term.length < 2) {
+                            return;
+                        }
+                        if (doc.titleLower.indexOf(term) !== -1) {
+                            score += 22;
+                        }
+                        if (doc.textLower.indexOf(term) !== -1) {
+                            score += 7;
+                        }
+                    });
+                    var allTermsHit = terms.length && terms.every(function (term) {
+                        return term.length < 2 || doc.titleLower.indexOf(term) !== -1 || doc.textLower.indexOf(term) !== -1;
+                    });
+                    if (allTermsHit) {
+                        score += 15;
+                    }
+                    if (score > 0) {
+                        ranked.push({ score: score, item: doc });
+                    }
+                });
+                ranked.sort(function (a, b) { return b.score - a.score; });
+                return ranked.slice(0, 18).map(function (row) {
+                    return {
+                        source: 'local',
+                        page: row.item.page,
+                        pageLabel: row.item.pageLabel,
+                        title: row.item.title,
+                        snippet: getSnippet(row.item.text, query)
+                    };
+                });
+            };
+
+            var pagefindApi = null;
+            var pagefindLoadPromise = null;
+            var loadPagefind = function () {
+                if (pagefindApi) {
+                    return Promise.resolve(pagefindApi);
+                }
+                if (pagefindLoadPromise) {
+                    return pagefindLoadPromise;
+                }
+                pagefindLoadPromise = import('/pagefind/pagefind.js')
+                    .then(function (mod) {
+                        pagefindApi = mod;
+                        return pagefindApi;
+                    })
+                    .catch(function () {
+                        return null;
+                    });
+                return pagefindLoadPromise;
+            };
+
+            var getSnippet = function (text, query) {
+                var cleanText = normalize(text);
+                if (!query) {
+                    return cleanText.slice(0, 160) + (cleanText.length > 160 ? ' ...' : '');
+                }
+                var q = query.toLowerCase();
+                var lower = cleanText.toLowerCase();
+                var idx = lower.indexOf(q);
+                if (idx < 0) {
+                    return cleanText.slice(0, 160) + (cleanText.length > 160 ? ' ...' : '');
+                }
+                var start = Math.max(0, idx - 55);
+                var end = Math.min(cleanText.length, idx + q.length + 95);
+                var snippet = cleanText.slice(start, end);
+                if (start > 0) {
+                    snippet = '... ' + snippet;
+                }
+                if (end < cleanText.length) {
+                    snippet += ' ...';
+                }
+                return snippet;
+            };
+
+            var mapPageLabelByUrl = function (url) {
+                var u = (url || '').toLowerCase();
+                if (u.indexOf('/posts/') !== -1) {
+                    return 'Blog';
+                }
+                if (u.indexOf('/projects/') !== -1) {
+                    return 'Research';
+                }
+                if (u.indexOf('/presentations/') !== -1) {
+                    return 'News';
+                }
+                if (u.indexOf('/nonequilibrium-field-theories-and-stochastic-dynamics') !== -1 ||
+                    u.indexOf('/self-organization-and-pattern-formation') !== -1 ||
+                    u.indexOf('/renormalization-group') !== -1) {
+                    return 'Notebook';
+                }
+                return 'Site';
+            };
+
+            var pagefindSearch = async function (query) {
+                var pf = await loadPagefind();
+                if (!pf || !pf.search) {
+                    return [];
+                }
+                var res = await pf.search(query);
+                if (!res || !res.results || !res.results.length) {
+                    return [];
+                }
+                var detailed = await Promise.all(res.results.slice(0, 12).map(function (row) {
+                    return row.data();
+                }));
+                return detailed.map(function (item) {
+                    return {
+                        source: 'pagefind',
+                        title: normalize(item.meta && item.meta.title ? item.meta.title : (item.url || 'Result')),
+                        pageLabel: mapPageLabelByUrl(item.url),
+                        snippet: normalize(item.excerpt || ''),
+                        url: item.url || ''
+                    };
+                });
+            };
+
+            var mergeResults = function (localResults, pagefindResults) {
+                var merged = [];
+                var seen = {};
+                localResults.forEach(function (item) {
+                    var key = 'local:' + item.page + ':' + item.title;
+                    if (!seen[key]) {
+                        seen[key] = true;
+                        merged.push(item);
+                    }
+                });
+                pagefindResults.forEach(function (item) {
+                    var key = 'url:' + (item.url || '') + ':' + item.title;
+                    if (!seen[key]) {
+                        seen[key] = true;
+                        merged.push(item);
+                    }
+                });
+                return merged.slice(0, 24);
+            };
+
+            var formatSearchItem = function (item) {
+                if (item.source === 'local') {
+                    return '<div class="search-hit"><div class="search-hit-content"><div class="search-hit-name">' +
+                        '<a href="#" data-open-page="' + escapeHtml(item.page) + '">' + escapeHtml(item.title) + '</a>' +
+                        '<div class="article-metadata search-hit-type">' + escapeHtml(item.pageLabel) + '</div>' +
+                        '<p class="search-hit-description">' + escapeHtml(item.snippet) + '</p>' +
+                        '</div></div></div>';
+                }
+                return '<div class="search-hit"><div class="search-hit-content"><div class="search-hit-name">' +
+                    '<a href="' + escapeHtml(item.url) + '" target="_self" rel="noopener">' + escapeHtml(item.title) + '</a>' +
+                    '<div class="article-metadata search-hit-type">' + escapeHtml(item.pageLabel) + '</div>' +
+                    '<p class="search-hit-description">' + item.snippet + '</p>' +
+                    '</div></div></div>';
+            };
+
+            var renderResults = async function (query) {
+                var q = normalize(query);
+                if (q.length < 1) {
+                    searchHits.innerHTML = '<div class="search-hit"><div class="search-hit-content"><div class="search-hit-name"><p class="search-hit-description">Type to search site content. You can also press Ctrl/Cmd + K.</p></div></div></div>';
+                    return;
+                }
+
+                var localResults = localSearch(q);
+                var pagefindResults = [];
+                try {
+                    pagefindResults = await pagefindSearch(q);
+                } catch (err) {
+                    pagefindResults = [];
+                }
+                var results = mergeResults(localResults, pagefindResults);
+
+                if (!results.length) {
+                    searchHits.innerHTML = '<div class="search-hit"><div class="search-hit-content"><div class="search-hit-name"><p class="search-hit-description">No results for "' + escapeHtml(q) + '".</p></div></div></div>';
+                    return;
+                }
+
+                var html = results.map(formatSearchItem).join('');
+                searchHits.innerHTML = html;
+            };
+
+            var openSearch = function () {
+                document.body.classList.add('searching');
+                setTimeout(function () {
+                    searchInput.focus();
+                    renderResults(searchInput.value || '');
+                }, 0);
+            };
+
+            var closeSearch = function () {
+                document.body.classList.remove('searching');
+            };
+
+            // Capture search icon click before legacy theme handlers.
+            document.addEventListener('click', function (event) {
+                var closeTrigger = event.target.closest('.col-search-close .js-search');
+                if (closeTrigger) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    if (event.stopImmediatePropagation) {
+                        event.stopImmediatePropagation();
+                    }
+                    closeSearch();
+                    return;
+                }
+
+                var openTrigger = event.target.closest('.page-search-action, .nav-icons .js-search');
+                if (openTrigger) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    if (event.stopImmediatePropagation) {
+                        event.stopImmediatePropagation();
+                    }
+                    openSearch();
+                }
+            }, true);
+
+            searchInput.addEventListener('input', function () {
+                renderResults(searchInput.value || '');
+            });
+
+            searchHits.addEventListener('click', function (event) {
+                var link = event.target.closest('a[data-open-page]');
+                if (!link) {
+                    return;
+                }
+                event.preventDefault();
+                var page = link.getAttribute('data-open-page');
+                if (page && window.setActivePage) {
+                    window.setActivePage(page, true);
+                }
+                closeSearch();
+                window.scrollTo(0, 0);
+            });
+
+            document.addEventListener('keydown', function (event) {
+                var hotkey = (event.ctrlKey || event.metaKey) && (event.key === 'k' || event.key === 'K');
+                if (hotkey) {
+                    event.preventDefault();
+                    openSearch();
+                    return;
+                }
+                if (event.key === 'Escape' && document.body.classList.contains('searching')) {
+                    event.preventDefault();
+                    closeSearch();
+                }
+            });
+
+            renderResults('');
         })();
     </script>
     <iframe id="netlify-identity-widget" title="Netlify identity widget"

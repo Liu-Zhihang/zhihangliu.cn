@@ -49,6 +49,10 @@
     type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://academic-demo.netlify.app/post/writing-technical-content/"},"headline":"Writing technical content in Markdown","image":["https://academic-demo.netlify.app/post/writing-technical-content/featured.jpg"],"datePublished":"2019-07-12T00:00:00Z","dateModified":"2022-10-02T17:41:19+01:00","author":{"@type":"Person","name":"Alice Wu 吳恩達"},"publisher":{"@type":"Organization","name":"Academic","logo":{"@type":"ImageObject","url":"https://academic-demo.netlify.app/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"}},"description":"Wowchemy is designed to give technical content creators a seamless experience. You can focus on the content and Wowchemy handles the rest.\nHighlight your code snippets, take notes on math classes, and draw diagrams from textual representation."}
   </script> -->
   <title>Top-down Dynamics Model: The Master Equation</title>
+  <style type="text/css">
+    #navbar-main .navbar-brand,
+    #navbar-main .nav-link { font-size: 0.94rem; font-weight: 600; }
+  </style>
   <script src="./assets/js/noerrors.js" charset="UTF-8"></script>
   <style type="text/css">
     .CtxtMenu_InfoClose {
@@ -2864,52 +2868,48 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
         <div class="container-xl">
-          <div class="d-none d-lg-inline-flex"><a class="navbar-brand" href="https://zhihangliu.cn/">zhihang Liu |
-              刘志航</a></div>
+          <div class="d-none d-lg-inline-flex"><a class="navbar-brand" href="https://zhihangliu.cn/">Zhihang Liu</a></div>
           <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content"
             aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
             <span><i class="fas fa-bars"></i></span></button>
           <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-            <a class="navbar-brand" href="https://zhihangliu.cn/">Zhihang Liu | 刘志航</a>
+            <a class="navbar-brand" href="https://zhihangliu.cn/">Zhihang Liu</a>
           </div>
           <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
             <ul class="navbar-nav d-md-inline-flex">
               <li class="nav-item">
-                <a class="nav-link active" href="https://zhihangliu.cn/#about"
-                  data-target="#about"><span>Home</span></a>
+                <a class="nav-link" href="https://zhihangliu.cn/#about"><span>About</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://zhihangliu.cn/#posts" data-target="#posts"><span>Posts</span></a>
+                <a class="nav-link" href="https://zhihangliu.cn/#news"><span>News</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://zhihangliu.cn/#projects"
-                  data-target="#projects"><span>Projects</span></a>
+                <a class="nav-link" href="https://zhihangliu.cn/#research"><span>Research</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://zhihangliu.cn/#featured"
-                  data-target="#featured"><span>Publications</span></a>
+                <a class="nav-link" href="https://zhihangliu.cn/#publications"><span>Publications</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://zhihangliu.cn/#talks"
-                  data-target="#talks"><span>Presentions</span></a>
+                <a class="nav-link" href="https://zhihangliu.cn/#notebook"><span>Notebook</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="https://zhihangliu.cn/#contact"
-                  data-target="#contact"><span>Contact</span></a>
+                <a class="nav-link active" href="https://zhihangliu.cn/#open-source"><span>Blog</span></a>
               </li>
             </ul>
           </div>
           <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-            <!-- <li class="nav-item d-none d-lg-inline-flex"><a class="nav-link" href="https://twitter.com/GeorgeCushen"
-                data-toggle="tooltip" data-placement="bottom" title="" target="_blank" rel="noopener"
-                aria-label="Follow me on Twitter" data-original-title="Follow me on Twitter"><i class="fab fa-twitter"
-                  aria-hidden="true"></i></a></li> -->
-            <li class="nav-item"><a class="nav-link js-search" href="https://zhihangliu.cn/posts/top_down_model/#"
-                aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a></li>
+            <li class="nav-item dropdown"><a href="https://zhihangliu.cn/posts/top_down_model/#" class="nav-link"
+                data-toggle="dropdown" aria-haspopup="true" aria-label="Languages"><i class="fas fa-globe"
+                  aria-hidden="true"></i> <span class="d-none d-lg-inline">EN / 中</span></a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a href="https://zhihangliu.cn/" class="dropdown-item">English</a>
+                <a href="https://zhihangliu.cn/zh/" class="dropdown-item">中文 (简体)</a>
+              </div>
+            </li>
             <li class="nav-item dropdown theme-dropdown"><a href="https://zhihangliu.cn/posts/top_down_model/#"
                 class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences"><i
                   class="fas fa-moon" aria-hidden="true"></i></a>
-              <div class="dropdown-menu"><a href="https://zhihangliu.cn/posts/top_down_model/#"
+              <div class="dropdown-menu dropdown-menu-right"><a href="https://zhihangliu.cn/posts/top_down_model/#"
                   class="dropdown-item js-set-theme-light"><span>Light</span></a>
                 <a href="https://zhihangliu.cn/posts/top_down_model/#"
                   class="dropdown-item js-set-theme-dark"><span>Dark</span></a>
@@ -3221,16 +3221,14 @@
               </figure>
 
 
-              <div class="media author-card content-widget-hr"><a href="https://zhihangliu.cn/"><img
-                    class="avatar mr-3 avatar-circle"
-                    src="./assets/images/avatar_hu52b4c1557bcb3599cc5c64f2ce5143cc_173763_270x270_fill_lanczos_center_3.png"
-                    alt="Zhihang Liu 刘志航"></a>
-                <div class="media-body">
-                  <h5 class="card-title"><a href="https://zhihangliu.cn/">Zhihang Liu 刘志航</a></h5>
-                  <h6 class="card-subtitle">Master student at the Peking University</h6>
-                  <p class="card-text">My research interests include Urban Computing, Computational Social Science,
-                    Complexity, and Complex Networks.</p>
-                </div>
+              <div class="blog-citation content-widget-hr">
+                <h5 class="card-title">Citation (BibTeX)</h5>
+                <pre class="blog-bibtex-content bg-light p-3 rounded border"><code>@misc{liu2023topdown,
+  author = {Liu, Zhihang},
+  title = {Top-down Dynamics Model: The Master Equation},
+  year = {2023},
+  url = {https://zhihangliu.cn/posts/top_down_model/}
+}</code></pre>
               </div>
         </div>
     </article>
@@ -3238,7 +3236,7 @@
   <div class="page-footer">
     <div class="container">
       <footer class="site-footer">
-        <p class="powered-by copyright-license-text">© 2023 Me. This work is licensed under <a
+        <p class="powered-by copyright-license-text">© 2026 Zhihang Liu. This work is licensed under <a
             href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC
             ND 4.0</a></p>
         <!-- <p class="powered-by">Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank"

@@ -1,0 +1,17 @@
+本地预览 Swarm 项目页的正确方式
+================================
+
+方式一：直接打开（推荐）
+  1. 用资源管理器进入：个人主页 文件夹（即包含 index.html 和 assets 的那一层）
+  2. 双击打开：projects\Swarm_robot\index.html
+  或 在浏览器地址栏输入（把路径改成你的实际路径）：
+     file:///E:/BaiduSyncdisk/项目/正在进行项目/个人主页/projects/Swarm_robot/index.html
+
+  注意：必须从「个人主页」这一层打开，这样 ../../assets 才能正确找到图片。
+
+方式二：本地服务器
+  1. 在「个人主页」文件夹里打开终端
+  2. 运行：python -m http.server 8091
+  3. 浏览器打开：http://127.0.0.1:8091/projects/Swarm_robot/index.html
+
+若仍看不到更新：按 Ctrl+Shift+R 强制刷新，或清除浏览器缓存后再试。
