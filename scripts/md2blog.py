@@ -101,7 +101,7 @@ def process_one_md(md_path: Path, meta: dict, body_html: str, bibtex: str, slug:
     title = meta.get("title", slug)
     description = meta.get("description", title)
     date_str = meta.get("date", "")
-    reading_time = meta.get("reading_time_min", "5") + " min read"
+    reading_time = str(meta.get("reading_time_min", 5)) + " min read"
     canonical = f"{BASE_URL}/posts/{slug}/"
 
     with open(index_file, "r", encoding="utf-8") as f:
@@ -163,7 +163,7 @@ def process_one_md(md_path: Path, meta: dict, body_html: str, bibtex: str, slug:
 
     # 替换 article-style 正文：从 <div class="article-style"> 到 <div class="blog-citation"> 之间的内容
     marker_start = '<div class="article-style">'
-    marker_end = '<div class="blog-citation"'
+    marker_end = '<div class="blog-citation'  # match with or without space before content-widget-hr
     i = html.find(marker_start)
     j = html.find(marker_end, i)
     if i != -1 and j != -1:
